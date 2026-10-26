@@ -1,0 +1,98 @@
+{
+  "duckdb_version": "2.0.0",
+  "snapshot_id": "20261026T015420Z",
+  "tests": [
+    {
+      "test": "transaction_key_unique",
+      "violations": 0
+    },
+    {
+      "test": "required_fact_fields",
+      "violations": 0
+    },
+    {
+      "test": "fiscal_date_consistency",
+      "violations": 0
+    },
+    {
+      "test": "cohort_boundaries",
+      "violations": 0
+    },
+    {
+      "test": "recipient_history_key_unique",
+      "violations": 0
+    },
+    {
+      "test": "history_join_preserves_rows",
+      "violations": 0
+    },
+    {
+      "test": "history_join_preserves_obligations",
+      "violations": 0
+    },
+    {
+      "test": "award_key_unique",
+      "violations": 0
+    },
+    {
+      "test": "award_flow_reconciliation",
+      "violations": 0
+    },
+    {
+      "test": "signed_flow_identity",
+      "violations": 0
+    },
+    {
+      "test": "hhi_bounds",
+      "violations": 0
+    },
+    {
+      "test": "peer_offer_denominator",
+      "violations": 0
+    },
+    {
+      "test": "offers_nonnegative",
+      "violations": 0
+    },
+    {
+      "test": "annual_transaction_counts",
+      "violations": 0
+    },
+    {
+      "test": "cumulative_award_endpoint",
+      "violations": 0
+    },
+    {
+      "test": "source_transaction_count",
+      "violations": 0
+    },
+    {
+      "test": "official_annual_reconciliation",
+      "violations": 0
+    }
+  ],
+  "reconciliation": [
+    {
+      "fiscal_year": 2022,
+      "warehouse_obligations": 172539161.85,
+      "official_transaction_obligations": 172539161.85,
+      "difference": 0.0,
+      "pass": true
+    },
+    {
+      "fiscal_year": 2023,
+      "warehouse_obligations": 183288400.22,
+      "official_transaction_obligations": 183288400.22,
+      "difference": 0.0,
+      "pass": true
+    },
+    {
+      "fiscal_year": 2024,
+      "warehouse_obligations": 192923805.28,
+      "official_transaction_obligations": 192923805.28,
+      "difference": 0.0,
+      "pass": true
+    }
+  ],
+  "all_passed": true
+}

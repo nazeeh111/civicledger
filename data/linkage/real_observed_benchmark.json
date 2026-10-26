@@ -1,0 +1,299 @@
+{
+  "status": "completed",
+  "scope": "real_observed",
+  "features": [
+    "name",
+    "city",
+    "state"
+  ],
+  "identifier_features": [],
+  "split_method": "SHA256 entity hash, 60/20/20 buckets; no entity crosses splits",
+  "split": {
+    "train": {
+      "records": 374,
+      "entities": 348,
+      "pairs": 69751,
+      "positive_pairs": 27
+    },
+    "calibration": {
+      "records": 94,
+      "entities": 86,
+      "pairs": 4371,
+      "positive_pairs": 8
+    },
+    "test": {
+      "records": 113,
+      "entities": 103,
+      "pairs": 6328,
+      "positive_pairs": 11
+    }
+  },
+  "methods": [
+    {
+      "method": "Exact raw name",
+      "threshold": 0.5,
+      "pairs": 6328,
+      "positive_pairs": 11,
+      "precision": 1.0,
+      "recall": 1.0,
+      "precision_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "recall_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "interval_note": "Binomial pair-level intervals; overlapping pairs are dependent, so these are descriptive and can be optimistic.",
+      "f1": 1.0,
+      "brier": 0.0,
+      "ece": 0.0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "error_cost": 0,
+      "cost_definition": "10 \u00d7 false merges + missed links; illustrative review preference, not observed harm",
+      "average_precision": 1.0,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 6317,
+          "mean_probability": 0.0,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 11,
+          "mean_probability": 1.0,
+          "observed_match_rate": 1.0
+        }
+      ]
+    },
+    {
+      "method": "Normalized name",
+      "threshold": 0.5,
+      "pairs": 6328,
+      "positive_pairs": 11,
+      "precision": 1.0,
+      "recall": 1.0,
+      "precision_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "recall_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "interval_note": "Binomial pair-level intervals; overlapping pairs are dependent, so these are descriptive and can be optimistic.",
+      "f1": 1.0,
+      "brier": 0.0,
+      "ece": 0.0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "error_cost": 0,
+      "cost_definition": "10 \u00d7 false merges + missed links; illustrative review preference, not observed harm",
+      "average_precision": 1.0,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 6317,
+          "mean_probability": 0.0,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 11,
+          "mean_probability": 1.0,
+          "observed_match_rate": 1.0
+        }
+      ]
+    },
+    {
+      "method": "Fellegi\u2013Sunter / Splink",
+      "threshold": 0.5,
+      "pairs": 6328,
+      "positive_pairs": 11,
+      "precision": 1.0,
+      "recall": 1.0,
+      "precision_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "recall_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "interval_note": "Binomial pair-level intervals; overlapping pairs are dependent, so these are descriptive and can be optimistic.",
+      "f1": 1.0,
+      "brier": 0.00010045757759069873,
+      "ece": 0.00029163107327830154,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "error_cost": 0,
+      "cost_definition": "10 \u00d7 false merges + missed links; illustrative review preference, not observed harm",
+      "average_precision": 1.0,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 6316,
+          "mean_probability": 2.3616761436723578e-05,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 1,
+          "mean_probability": 0.18962846141867715,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.5,
+          "upper": 0.6,
+          "n": 3,
+          "mean_probability": 0.5572399760566338,
+          "observed_match_rate": 1.0
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 8,
+          "mean_probability": 0.9777038208472537,
+          "observed_match_rate": 1.0
+        }
+      ]
+    },
+    {
+      "method": "Held-out calibrated Fellegi\u2013Sunter",
+      "threshold": 0.5,
+      "pairs": 6328,
+      "positive_pairs": 11,
+      "precision": 1.0,
+      "recall": 1.0,
+      "precision_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "recall_95_jeffreys_interval": [
+        0.800005430973792,
+        0.9999563642018579
+      ],
+      "interval_note": "Binomial pair-level intervals; overlapping pairs are dependent, so these are descriptive and can be optimistic.",
+      "f1": 1.0,
+      "brier": 2.468227472924954e-05,
+      "ece": 0.0002840070561610079,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "error_cost": 0,
+      "cost_definition": "10 \u00d7 false merges + missed links; illustrative review preference, not observed harm",
+      "average_precision": 1.0,
+      "calibration_bins": [
+        {
+          "lower": 0.0,
+          "upper": 0.1,
+          "n": 6315,
+          "mean_probability": 0.00011457378551787786,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.1,
+          "upper": 0.2,
+          "n": 1,
+          "mean_probability": 0.14415915625348547,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.3,
+          "upper": 0.4,
+          "n": 1,
+          "mean_probability": 0.3183929284768634,
+          "observed_match_rate": 0.0
+        },
+        {
+          "lower": 0.9,
+          "upper": 1.0,
+          "n": 11,
+          "mean_probability": 0.9444444444444445,
+          "observed_match_rate": 1.0
+        }
+      ]
+    }
+  ],
+  "model": {
+    "prior": 0.00039425392820277555,
+    "parameters": {
+      "name": {
+        "m": [
+          0.9482758620689655,
+          0.017241379310344827,
+          0.017241379310344827,
+          0.017241379310344827
+        ],
+        "u": [
+          6.453833577144824e-05,
+          2.1512778590482746e-05,
+          0.0005378194647620687,
+          0.999376129420876
+        ]
+      },
+      "city": {
+        "m": [
+          0.017857142857142856,
+          0.9821428571428571
+        ],
+        "u": [
+          0.007378988884904984,
+          0.992621011115095
+        ]
+      },
+      "state": {
+        "m": [
+          0.8035714285714286,
+          0.19642857142857142
+        ],
+        "u": [
+          0.10507588035951083,
+          0.8949241196404891
+        ]
+      }
+    },
+    "smoothing": 0.5
+  },
+  "calibration": {
+    "method": "Isotonic regression with Jeffreys beta(0.5,0.5) plateau smoothing on calibration entities only",
+    "x_thresholds": [
+      1.4777443980553766e-06,
+      0.002738429112420226,
+      0.5572399760566338,
+      0.9777038208472537
+    ],
+    "y_thresholds": [
+      0.00011457378551787785,
+      0.00011457378551787785,
+      0.9444444444444443,
+      0.9444444444444444
+    ]
+  },
+  "limitations": [
+    "UEI equality is an identifier-backed proxy, not independent human-adjudicated identity.",
+    "Natural source records have one observed name per UEI; positive pairs chiefly test location changes, not misspellings.",
+    "Only name, city and state are compared. City/state correlation can overstate conditional-independence evidence.",
+    "All test pairs are evaluated without negative subsampling. Rare-match errors can hide behind low Brier/ECE; read precision/recall too.",
+    "Calibration is cohort-prevalence specific; probabilities do not transfer unchanged to a blocked or missing-ID population.",
+    "A 0.5 threshold and illustrative false-merge cost 10 were fixed without test optimization."
+  ],
+  "splink_verification": {
+    "status": "passed",
+    "version": "5.0.0",
+    "all_pairs": 6328,
+    "max_abs_probability_difference": 4.440892098500626e-16,
+    "role": "Splink runtime inference with train-only supervised m/u; independent transparent FS calculation checks likelihood ratios."
+  },
+  "source": {
+    "snapshot_id": "20261026T015420Z",
+    "public_csv_sha256": "c0bd912f23dd53a26c0d83c2cd79d0c448959784752fca0a6945f7bdfc84591c"
+  }
+}

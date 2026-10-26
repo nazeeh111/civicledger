@@ -1,0 +1,17 @@
+# Raw source snapshots stay local; retrieval code + checksums are published.
+data/raw/**
+!data/raw/.gitkeep
+*.duckdb
+*.duckdb.wal
+__pycache__/
+.pytest_cache/
+.venv/
+*.egg-info/
+dbt/target/
+dbt/logs/
+app/.git/
+.DS_Store
+# The buildless application source lives in dist; override machine-wide build ignores.
+!app/dist/
+!app/dist/**
+dbt/.user.yml

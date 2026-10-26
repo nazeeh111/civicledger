@@ -1,0 +1,43 @@
+{
+  "engine": "DuckDB 2.0.0",
+  "rows": 4683,
+  "conditions": "Local laptop, seven warm-cache runs, one connection, full result materialization included; not a large-scale benchmark.",
+  "queries": [
+    {
+      "query": "annual_concentration",
+      "sql": "SELECT * FROM annual_concentration",
+      "returned_rows": 3,
+      "runs": 7,
+      "median_ms": 7.835291093215346,
+      "min_ms": 7.060542004182935,
+      "max_ms": 9.016874944791198
+    },
+    {
+      "query": "award_timelines",
+      "sql": "SELECT award_id,max(cumulative_in_cohort_obligation) FROM award_timeline GROUP BY award_id",
+      "returned_rows": 1588,
+      "runs": 7,
+      "median_ms": 6.90162496175617,
+      "min_ms": 5.794125027023256,
+      "max_ms": 8.694000076502562
+    },
+    {
+      "query": "peer_competition",
+      "sql": "SELECT * FROM peer_competition WHERE adequate_peer_size ORDER BY single_offer_rate DESC",
+      "returned_rows": 49,
+      "runs": 7,
+      "median_ms": 11.259290971793234,
+      "min_ms": 10.268791927956045,
+      "max_ms": 12.902374961413443
+    },
+    {
+      "query": "history_join",
+      "sql": "SELECT h.recipient_name,sum(f.obligation) FROM fact_transactions f JOIN dim_recipient_history h USING(recipient_history_id) GROUP BY h.recipient_name",
+      "returned_rows": 534,
+      "runs": 7,
+      "median_ms": 4.5400409726426005,
+      "min_ms": 3.193250042386353,
+      "max_ms": 6.025083013810217
+    }
+  ]
+}

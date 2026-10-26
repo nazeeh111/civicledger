@@ -1,0 +1,8 @@
+civicledger:
+  target: local
+  outputs:
+    local:
+      type: duckdb
+      path: "{{ env_var('CIVICLEDGER_DB', '../data/warehouse.duckdb') }}"
+      schema: analytics
+      threads: 2

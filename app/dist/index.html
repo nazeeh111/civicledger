@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123e34">
+  <meta name="description" content="Trace public contract obligations, compare procurement peers, and test whether conclusions survive uncertainty about supplier identity. Every conclusion starts with evidence.">
+  <title>CIVICLEDGER · Public money, in context</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to analysis</a>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview" aria-label="Civicledger overview"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M5 4h26v28H5zM13 4v28M5 12h26M5 20h26M5 28h26" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M19 8h7M19 16h7M19 24h7" stroke="currentColor" stroke-width="1.7"/></svg><span>CIVIC<span class="light">LEDGER</span><small>PUBLIC MONEY, IN CONTEXT</small></span></a>
+    <div class="nav-heading">Research workspace</div>
+    <nav aria-label="Primary"><a class="nav-link active" href="#overview" data-tab="overview"><span aria-hidden="true">◫</span>Overview</a><a class="nav-link" href="#explorer" data-tab="explorer"><span aria-hidden="true">↳</span>Money explorer</a><a class="nav-link" href="#uncertainty" data-tab="uncertainty"><span aria-hidden="true">⋈</span>Entity uncertainty</a><a class="nav-link" href="#cases" data-tab="cases"><span aria-hidden="true">▤</span>Case studies</a><a class="nav-link" href="#methods" data-tab="methods"><span aria-hidden="true">⌘</span>Methods & evidence</a></nav>
+    <div class="side-bottom"><div class="source-status"><span class="status-dot"></span>Public data · reproducible analysis</div><p>Unusual patterns are questions to investigate. They are not evidence of wrongdoing.</p><a id="source-repo" href="https://api.usaspending.gov/" target="_blank" rel="noopener">Source & reproducibility <span aria-hidden="true">↗</span></a></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><div><span class="breadcrumb">CIVICLEDGER</span><span class="slash">/</span><span id="breadcrumb-view">Overview</span></div><div class="top-actions"><span class="snapshot" id="snapshot-label">Preparing evidence</span><button class="button small" id="export-dossier"><span aria-hidden="true">↓</span> Export dossier</button></div></header>
+    <main id="main" tabindex="-1">
+      <div id="loading" role="status" class="loading"><span class="loading-mark" aria-hidden="true">▦</span><h1>Opening the ledger</h1><p>Loading the published evidence snapshot.</p></div>
+      <div id="app" hidden>
+        <section class="page-intro"><div><p class="eyebrow">EVIDENCE-FIRST PROCUREMENT INTELLIGENCE</p><h1 id="page-title">Public money.<br><em>A clearer picture.</em></h1><p class="intro-copy" id="page-description">Follow contract funding to its recipients, compare like-for-like peers, and see which conclusions survive ambiguity.</p></div><div class="scope-card"><span class="eyebrow">ANALYSIS COHORT</span><strong id="scope-agency">—</strong><p id="scope-description"></p><div class="filter-line"><label for="fiscal-year">Fiscal year</label><select id="fiscal-year"><option value="all">All years</option></select></div><p class="scope-foot" id="scope-foot"></p></div></section>
+        <div class="view" id="view-overview"></div>
+        <div class="view" id="view-explorer" hidden></div>
+        <div class="view" id="view-uncertainty" hidden></div>
+        <div class="view" id="view-cases" hidden></div>
+        <div class="view" id="view-methods" hidden></div>
+        <footer class="page-footer"><span>CIVICLEDGER · Built on public evidence</span><span id="footer-snapshot"></span><a href="#methods" data-tab="methods">Limits & methodology ↗</a></footer>
+      </div>
+    </main>
+  </div>
+</div>
+<dialog id="evidence-dialog" aria-labelledby="evidence-title"><div class="dialog-head"><div><p class="eyebrow">FOLLOW THE EVIDENCE</p><h2 id="evidence-title"></h2></div><button class="icon-button" data-close-dialog aria-label="Close evidence">×</button></div><div id="evidence-body"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+<noscript><p class="noscript">CIVICLEDGER needs JavaScript for its interactive analysis. Download the reproducible data and SQL from the public release repository.</p></noscript>
+</body>
+</html>

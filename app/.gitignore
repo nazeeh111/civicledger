@@ -1,0 +1,3 @@
+# Buildless HTML/JS source and public data must travel with this Site.
+!dist/
+!dist/**

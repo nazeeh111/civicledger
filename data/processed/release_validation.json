@@ -1,0 +1,35 @@
+{
+  "version": "1.0.0",
+  "source_snapshot": "20261026T015420Z",
+  "public_csv_sha256": "c0bd912f23dd53a26c0d83c2cd79d0c448959784752fca0a6945f7bdfc84591c",
+  "verified_at_utc": "2026-10-26T02:20:10.012265+00:00",
+  "local_python": {
+    "passed": 22,
+    "skipped": 0
+  },
+  "clean_public_rebuild": {
+    "passed": 21,
+    "skipped": 1,
+    "skip_reason": "Original full-field raw archive intentionally excluded",
+    "preexisting_warehouse": false,
+    "raw_archives_present": false,
+    "full_review_replicates": {
+      "natural": 20,
+      "synthetic": 10
+    },
+    "exit_code": 0
+  },
+  "native_sql_checks": 17,
+  "dbt_models": 4,
+  "dbt_tests": 15,
+  "frontend_strict_check": "passed",
+  "independent_review": "No remaining confirmed source or artifact release hold after fixes",
+  "browser": {
+    "desktop": "passed",
+    "mobile_390px": "passed",
+    "case_dossier_and_memo_downloads": "passed",
+    "dossier_source_records": 4683,
+    "single_conditional_preview": "passed"
+  },
+  "sites_source_commit": "9bf633ef68a13f9190e9d750997c20738a7613ab"
+}

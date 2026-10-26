@@ -1,0 +1,22 @@
+[
+  {
+    "repository": "open-contracting/cardinal-rs",
+    "sha": "0b28400d90e0167ff671c5d0b616418b4ac6dc2e",
+    "commit_date": "2026-10-07T17:41:16Z"
+  },
+  {
+    "repository": "evidence-dev/evidence",
+    "sha": "505913ca3e03391fd4c1d06c1d2aa33653cdb27f",
+    "commit_date": "2026-10-23T14:42:39Z"
+  },
+  {
+    "repository": "moj-analytical-services/splink",
+    "sha": "b17ee0881a97662519c037e50268408ab424b065",
+    "commit_date": "2026-10-21T16:14:43Z"
+  },
+  {
+    "repository": "fedspendingtransparency/usaspending-api",
+    "sha": "0a6d86a1e7e4105f349ec5db193ed4c7fca00466",
+    "commit_date": "2026-10-14T21:24:00Z"
+  }
+]

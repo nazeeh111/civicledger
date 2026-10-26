@@ -1,0 +1,30 @@
+{
+  "repository": "https://github.com/fedspendingtransparency/usaspending-api",
+  "revision": "0a6d86a1e7e4105f349ec5db193ed4c7fca00466",
+  "contracts": [
+    {
+      "path": "usaspending_api/api_contracts/contracts/v2/download/transactions.md",
+      "url": "https://github.com/fedspendingtransparency/usaspending-api/blob/0a6d86a1e7e4105f349ec5db193ed4c7fca00466/usaspending_api/api_contracts/contracts/v2/download/transactions.md",
+      "sha256": "a224fc6a8faebfa40deb29cf7570bca2f09caaba3a19d77f27116a69495ac905",
+      "bytes": 7984
+    },
+    {
+      "path": "usaspending_api/api_contracts/contracts/v2/search/spending_by_transaction_count.md",
+      "url": "https://github.com/fedspendingtransparency/usaspending-api/blob/0a6d86a1e7e4105f349ec5db193ed4c7fca00466/usaspending_api/api_contracts/contracts/v2/search/spending_by_transaction_count.md",
+      "sha256": "f6b26bd7702d00b1e66df898fcda8c364a06d543fdac58e87d7742a09951b61c",
+      "bytes": 1738
+    },
+    {
+      "path": "usaspending_api/api_contracts/contracts/v2/search/spending_over_time.md",
+      "url": "https://github.com/fedspendingtransparency/usaspending-api/blob/0a6d86a1e7e4105f349ec5db193ed4c7fca00466/usaspending_api/api_contracts/contracts/v2/search/spending_over_time.md",
+      "sha256": "eba0cbad6505e1eacca1fc2b0071fb6a6913ea74affe315ff00bf49d954f72e4",
+      "bytes": 9045
+    },
+    {
+      "path": "usaspending_api/download/delta_models/dataframes/transaction_download.py",
+      "url": "https://github.com/fedspendingtransparency/usaspending-api/blob/0a6d86a1e7e4105f349ec5db193ed4c7fca00466/usaspending_api/download/delta_models/dataframes/transaction_download.py",
+      "sha256": "af3523d1abf04876328c2c86612cc47a17496ef1988ad1b3cde65f263c7190c6",
+      "bytes": 34183
+    }
+  ]
+}

@@ -1,0 +1,1320 @@
+{
+  "scope": "NRC awarding agency; A/B/C/D contracts; FY2022\u2013FY2024",
+  "overview": {
+    "transactions": 4683,
+    "awards": 1588,
+    "recipients": 537,
+    "industries": 149,
+    "net": 548751367.35,
+    "positive": 566728702.87,
+    "negative": -17977335.52,
+    "negative_actions": 582,
+    "zero_actions": 1294,
+    "positive_actions": 2807,
+    "missing_competition": 19,
+    "missing_offers": 1319,
+    "missing_parent": 0
+  },
+  "annual": [
+    {
+      "fy": 2022,
+      "actions": 1705,
+      "awards": 836,
+      "recipients": 397,
+      "net": 172539161.85,
+      "positive": 178876473.04,
+      "september_positive_share": 0.23583552550573034,
+      "competitive_positive_share": 0.7630993847328152,
+      "hhi": 441.51648879789036
+    },
+    {
+      "fy": 2023,
+      "actions": 1465,
+      "awards": 799,
+      "recipients": 391,
+      "net": 183288400.22,
+      "positive": 189813830.66,
+      "september_positive_share": 0.10094961907345344,
+      "competitive_positive_share": 0.7875565838917674,
+      "hhi": 438.2518274311739
+    },
+    {
+      "fy": 2024,
+      "actions": 1513,
+      "awards": 799,
+      "recipients": 364,
+      "net": 192923805.28,
+      "positive": 198038399.17,
+      "september_positive_share": 0.15003432770881048,
+      "competitive_positive_share": 0.7517724306193704,
+      "hhi": 383.21195933600393
+    }
+  ],
+  "positive_transaction_distribution": {
+    "n_positive": 2807,
+    "median": 61844.0,
+    "p90": 430985.4,
+    "p99": 2443728.7,
+    "maximum": 13174043.43,
+    "top_one_percent_share": 0.21144700637738498
+  },
+  "naics_composition": [
+    {
+      "naics_code": "541519",
+      "description": "OTHER COMPUTER RELATED SERVICES",
+      "actions": 1041,
+      "awards": 435,
+      "positive": 169630321.88,
+      "net": 167130344.09,
+      "share": 0.29931485915741757
+    },
+    {
+      "naics_code": "541512",
+      "description": "COMPUTER SYSTEMS DESIGN SERVICES",
+      "actions": 200,
+      "awards": 40,
+      "positive": 89054460.67,
+      "net": 85742665.9,
+      "share": 0.15713772783876082
+    },
+    {
+      "naics_code": "541511",
+      "description": "CUSTOM COMPUTER PROGRAMMING SERVICES",
+      "actions": 427,
+      "awards": 61,
+      "positive": 79505326.53,
+      "net": 78082612.56,
+      "share": 0.14028815926804658
+    },
+    {
+      "naics_code": "511210",
+      "description": "SOFTWARE PUBLISHERS",
+      "actions": 122,
+      "awards": 31,
+      "positive": 23427903.52,
+      "net": 22542576.14,
+      "share": 0.04133883355714568
+    },
+    {
+      "naics_code": "541690",
+      "description": "OTHER SCIENTIFIC AND TECHNICAL CONSULTING SERVICES",
+      "actions": 355,
+      "awards": 148,
+      "positive": 22560254.64,
+      "net": 20938394.88,
+      "share": 0.039807856079551736
+    },
+    {
+      "naics_code": "541611",
+      "description": "ADMINISTRATIVE MANAGEMENT AND GENERAL MANAGEMENT CONSULTING SERVICES",
+      "actions": 335,
+      "awards": 72,
+      "positive": 20912681.24,
+      "net": 19811082.95,
+      "share": 0.036900691872663254
+    },
+    {
+      "naics_code": "561210",
+      "description": "FACILITIES SUPPORT SERVICES",
+      "actions": 83,
+      "awards": 12,
+      "positive": 19722218.26,
+      "net": 19187686.79,
+      "share": 0.034800104812273844
+    },
+    {
+      "naics_code": "541330",
+      "description": "ENGINEERING SERVICES",
+      "actions": 104,
+      "awards": 53,
+      "positive": 13665108.45,
+      "net": 13293229.61,
+      "share": 0.024112257559565663
+    },
+    {
+      "naics_code": "517110",
+      "description": "WIRED TELECOMMUNICATIONS CARRIERS",
+      "actions": 43,
+      "awards": 7,
+      "positive": 12789083.79,
+      "net": 12789083.79,
+      "share": 0.02256650091169574
+    },
+    {
+      "naics_code": "541715",
+      "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT NANOTECHNOLOGY AND BIOTECHNOLOGY)",
+      "actions": 77,
+      "awards": 28,
+      "positive": 10254498.16,
+      "net": 10239733.01,
+      "share": 0.018094192350007452
+    },
+    {
+      "naics_code": "541990",
+      "description": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES",
+      "actions": 160,
+      "awards": 61,
+      "positive": 8063851.21,
+      "net": 7540522.17,
+      "share": 0.014228767961042799
+    },
+    {
+      "naics_code": "334111",
+      "description": "ELECTRONIC COMPUTER MANUFACTURING",
+      "actions": 25,
+      "awards": 19,
+      "positive": 7123370.76,
+      "net": 7099348.09,
+      "share": 0.012569278252409258
+    }
+  ],
+  "award_year_competition_peers": [
+    {
+      "fy": 2022,
+      "naics_code": "541519",
+      "description": "OTHER COMPUTER RELATED SERVICES",
+      "awards": 215,
+      "known_competition": 215,
+      "competitive_awards": 179,
+      "competitive_with_offers": 157,
+      "single_offer_awards": 42
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541519",
+      "description": "OTHER COMPUTER RELATED SERVICES",
+      "awards": 212,
+      "known_competition": 212,
+      "competitive_awards": 172,
+      "competitive_with_offers": 139,
+      "single_offer_awards": 41
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541519",
+      "description": "OTHER COMPUTER RELATED SERVICES",
+      "awards": 187,
+      "known_competition": 187,
+      "competitive_awards": 150,
+      "competitive_with_offers": 122,
+      "single_offer_awards": 34
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541690",
+      "description": "OTHER SCIENTIFIC AND TECHNICAL CONSULTING SERVICES",
+      "awards": 70,
+      "known_competition": 70,
+      "competitive_awards": 53,
+      "competitive_with_offers": 25,
+      "single_offer_awards": 7
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541690",
+      "description": "OTHER SCIENTIFIC AND TECHNICAL CONSULTING SERVICES",
+      "awards": 68,
+      "known_competition": 68,
+      "competitive_awards": 51,
+      "competitive_with_offers": 15,
+      "single_offer_awards": 5
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541690",
+      "description": "OTHER SCIENTIFIC AND TECHNICAL CONSULTING SERVICES",
+      "awards": 59,
+      "known_competition": 59,
+      "competitive_awards": 42,
+      "competitive_with_offers": 11,
+      "single_offer_awards": 3
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541611",
+      "description": "ADMINISTRATIVE MANAGEMENT AND GENERAL MANAGEMENT CONSULTING SERVICES",
+      "awards": 52,
+      "known_competition": 52,
+      "competitive_awards": 24,
+      "competitive_with_offers": 15,
+      "single_offer_awards": 11
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541611",
+      "description": "ADMINISTRATIVE MANAGEMENT AND GENERAL MANAGEMENT CONSULTING SERVICES",
+      "awards": 49,
+      "known_competition": 49,
+      "competitive_awards": 27,
+      "competitive_with_offers": 14,
+      "single_offer_awards": 8
+    },
+    {
+      "fy": 2022,
+      "naics_code": "517311",
+      "description": "WIRED TELECOMMUNICATIONS CARRIERS",
+      "awards": 46,
+      "known_competition": 46,
+      "competitive_awards": 33,
+      "competitive_with_offers": 33,
+      "single_offer_awards": 15
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541511",
+      "description": "CUSTOM COMPUTER PROGRAMMING SERVICES",
+      "awards": 43,
+      "known_competition": 43,
+      "competitive_awards": 34,
+      "competitive_with_offers": 31,
+      "single_offer_awards": 16
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541611",
+      "description": "ADMINISTRATIVE MANAGEMENT AND GENERAL MANAGEMENT CONSULTING SERVICES",
+      "awards": 42,
+      "known_competition": 42,
+      "competitive_awards": 18,
+      "competitive_with_offers": 14,
+      "single_offer_awards": 10
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541511",
+      "description": "CUSTOM COMPUTER PROGRAMMING SERVICES",
+      "awards": 41,
+      "known_competition": 41,
+      "competitive_awards": 34,
+      "competitive_with_offers": 31,
+      "single_offer_awards": 15
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541990",
+      "description": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES",
+      "awards": 38,
+      "known_competition": 25,
+      "competitive_awards": 12,
+      "competitive_with_offers": 11,
+      "single_offer_awards": 8
+    },
+    {
+      "fy": 2023,
+      "naics_code": "517311",
+      "description": "WIRED TELECOMMUNICATIONS CARRIERS",
+      "awards": 37,
+      "known_competition": 37,
+      "competitive_awards": 23,
+      "competitive_with_offers": 23,
+      "single_offer_awards": 11
+    },
+    {
+      "fy": 2024,
+      "naics_code": "562211",
+      "description": "HAZARDOUS WASTE TREATMENT AND DISPOSAL",
+      "awards": 36,
+      "known_competition": 36,
+      "competitive_awards": 0,
+      "competitive_with_offers": 0,
+      "single_offer_awards": 0
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541511",
+      "description": "CUSTOM COMPUTER PROGRAMMING SERVICES",
+      "awards": 35,
+      "known_competition": 35,
+      "competitive_awards": 29,
+      "competitive_with_offers": 28,
+      "single_offer_awards": 16
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541512",
+      "description": "COMPUTER SYSTEMS DESIGN SERVICES",
+      "awards": 30,
+      "known_competition": 30,
+      "competitive_awards": 27,
+      "competitive_with_offers": 27,
+      "single_offer_awards": 12
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541990",
+      "description": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES",
+      "awards": 29,
+      "known_competition": 29,
+      "competitive_awards": 9,
+      "competitive_with_offers": 9,
+      "single_offer_awards": 4
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541990",
+      "description": "ALL OTHER PROFESSIONAL, SCIENTIFIC, AND TECHNICAL SERVICES",
+      "awards": 26,
+      "known_competition": 26,
+      "competitive_awards": 10,
+      "competitive_with_offers": 10,
+      "single_offer_awards": 8
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541715",
+      "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT NANOTECHNOLOGY AND BIOTECHNOLOGY)",
+      "awards": 26,
+      "known_competition": 26,
+      "competitive_awards": 7,
+      "competitive_with_offers": 7,
+      "single_offer_awards": 2
+    },
+    {
+      "fy": 2024,
+      "naics_code": "517311",
+      "description": "WIRED TELECOMMUNICATIONS CARRIERS",
+      "awards": 25,
+      "known_competition": 25,
+      "competitive_awards": 12,
+      "competitive_with_offers": 12,
+      "single_offer_awards": 7
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541512",
+      "description": "COMPUTER SYSTEMS DESIGN SERVICES",
+      "awards": 24,
+      "known_competition": 24,
+      "competitive_awards": 20,
+      "competitive_with_offers": 19,
+      "single_offer_awards": 10
+    },
+    {
+      "fy": 2024,
+      "naics_code": "611430",
+      "description": "PROFESSIONAL AND MANAGEMENT DEVELOPMENT TRAINING",
+      "awards": 24,
+      "known_competition": 24,
+      "competitive_awards": 17,
+      "competitive_with_offers": 17,
+      "single_offer_awards": 11
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541330",
+      "description": "ENGINEERING SERVICES",
+      "awards": 23,
+      "known_competition": 17,
+      "competitive_awards": 15,
+      "competitive_with_offers": 11,
+      "single_offer_awards": 1
+    },
+    {
+      "fy": 2022,
+      "naics_code": "511210",
+      "description": "SOFTWARE PUBLISHERS",
+      "awards": 22,
+      "known_competition": 22,
+      "competitive_awards": 9,
+      "competitive_with_offers": 7,
+      "single_offer_awards": 5
+    },
+    {
+      "fy": 2022,
+      "naics_code": "562211",
+      "description": "HAZARDOUS WASTE TREATMENT AND DISPOSAL",
+      "awards": 22,
+      "known_competition": 22,
+      "competitive_awards": 0,
+      "competitive_with_offers": 0,
+      "single_offer_awards": 0
+    },
+    {
+      "fy": 2023,
+      "naics_code": "611430",
+      "description": "PROFESSIONAL AND MANAGEMENT DEVELOPMENT TRAINING",
+      "awards": 22,
+      "known_competition": 22,
+      "competitive_awards": 13,
+      "competitive_with_offers": 13,
+      "single_offer_awards": 9
+    },
+    {
+      "fy": 2022,
+      "naics_code": "611430",
+      "description": "PROFESSIONAL AND MANAGEMENT DEVELOPMENT TRAINING",
+      "awards": 21,
+      "known_competition": 21,
+      "competitive_awards": 12,
+      "competitive_with_offers": 12,
+      "single_offer_awards": 9
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541330",
+      "description": "ENGINEERING SERVICES",
+      "awards": 20,
+      "known_competition": 20,
+      "competitive_awards": 18,
+      "competitive_with_offers": 13,
+      "single_offer_awards": 7
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541330",
+      "description": "ENGINEERING SERVICES",
+      "awards": 20,
+      "known_competition": 20,
+      "competitive_awards": 16,
+      "competitive_with_offers": 7,
+      "single_offer_awards": 2
+    },
+    {
+      "fy": 2023,
+      "naics_code": "511210",
+      "description": "SOFTWARE PUBLISHERS",
+      "awards": 19,
+      "known_competition": 19,
+      "competitive_awards": 10,
+      "competitive_with_offers": 7,
+      "single_offer_awards": 4
+    },
+    {
+      "fy": 2023,
+      "naics_code": "562211",
+      "description": "HAZARDOUS WASTE TREATMENT AND DISPOSAL",
+      "awards": 17,
+      "known_competition": 17,
+      "competitive_awards": 0,
+      "competitive_with_offers": 0,
+      "single_offer_awards": 0
+    },
+    {
+      "fy": 2023,
+      "naics_code": "541715",
+      "description": "RESEARCH AND DEVELOPMENT IN THE PHYSICAL, ENGINEERING, AND LIFE SCIENCES (EXCEPT NANOTECHNOLOGY AND BIOTECHNOLOGY)",
+      "awards": 16,
+      "known_competition": 16,
+      "competitive_awards": 5,
+      "competitive_with_offers": 5,
+      "single_offer_awards": 0
+    },
+    {
+      "fy": 2024,
+      "naics_code": "511210",
+      "description": "SOFTWARE PUBLISHERS",
+      "awards": 16,
+      "known_competition": 16,
+      "competitive_awards": 8,
+      "competitive_with_offers": 6,
+      "single_offer_awards": 3
+    },
+    {
+      "fy": 2024,
+      "naics_code": "517111",
+      "description": "WIRED TELECOMMUNICATIONS CARRIERS",
+      "awards": 15,
+      "known_competition": 15,
+      "competitive_awards": 12,
+      "competitive_with_offers": 12,
+      "single_offer_awards": 12
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541512",
+      "description": "COMPUTER SYSTEMS DESIGN SERVICES",
+      "awards": 15,
+      "known_competition": 15,
+      "competitive_awards": 13,
+      "competitive_with_offers": 13,
+      "single_offer_awards": 6
+    },
+    {
+      "fy": 2022,
+      "naics_code": "517911",
+      "description": "TELECOMMUNICATIONS RESELLERS",
+      "awards": 12,
+      "known_competition": 12,
+      "competitive_awards": 12,
+      "competitive_with_offers": 12,
+      "single_offer_awards": 11
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541620",
+      "description": "ENVIRONMENTAL CONSULTING SERVICES",
+      "awards": 12,
+      "known_competition": 12,
+      "competitive_awards": 12,
+      "competitive_with_offers": 6,
+      "single_offer_awards": 4
+    },
+    {
+      "fy": 2023,
+      "naics_code": "561210",
+      "description": "FACILITIES SUPPORT SERVICES",
+      "awards": 12,
+      "known_competition": 12,
+      "competitive_awards": 6,
+      "competitive_with_offers": 6,
+      "single_offer_awards": 3
+    },
+    {
+      "fy": 2022,
+      "naics_code": "541612",
+      "description": "HUMAN RESOURCES CONSULTING SERVICES (2007), HUMAN RESOURCES AND EXECUTIVE SEARCH CONSULTING SERVICES (2002)",
+      "awards": 11,
+      "known_competition": 11,
+      "competitive_awards": 4,
+      "competitive_with_offers": 4,
+      "single_offer_awards": 3
+    },
+    {
+      "fy": 2024,
+      "naics_code": "541612",
+      "description": "HUMAN RESOURCES CONSULTING SERVICES (2007), HUMAN RESOURCES AND EXECUTIVE SEARCH CONSULTING SERVICES (2002)",
+      "awards": 10,
+      "known_competition": 10,
+      "competitive_awards": 6,
+      "competitive_with_offers": 6,
+      "single_offer_awards": 4
+    }
+  ],
+  "recipients_with_multiple_reported_parents": [
+    {
+      "recipient_uei": "S5HFWGVB5GM5",
+      "name": "COMCAST OF ILLINOIS III, INC.",
+      "parent_ids": 3,
+      "observations": 9
+    },
+    {
+      "recipient_uei": "Z7YEYLLFV1C7",
+      "name": "CORYS INC",
+      "parent_ids": 3,
+      "observations": 19
+    },
+    {
+      "recipient_uei": "V1BLMWD5MTR1",
+      "name": "ELSEVIER B.V.",
+      "parent_ids": 3,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "PJANMEJLEEN5",
+      "name": "FRAMATOME INC",
+      "parent_ids": 3,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "VXDFH959NB65",
+      "name": "INFORMATION SYSTEMS LABORATORIES, INC",
+      "parent_ids": 3,
+      "observations": 60
+    },
+    {
+      "recipient_uei": "K3EULBP5B767",
+      "name": "JOHN WILEY & SONS INC",
+      "parent_ids": 3,
+      "observations": 5
+    },
+    {
+      "recipient_uei": "H5AKPL6N4L96",
+      "name": "LEXISNEXIS SPECIAL SERVICES INC",
+      "parent_ids": 3,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "WK4KLC4ZBNF8",
+      "name": "UNISON SOFTWARE INC",
+      "parent_ids": 3,
+      "observations": 14
+    },
+    {
+      "recipient_uei": "L997DB4PEJL8",
+      "name": "WEST PUBLISHING CORPORATION",
+      "parent_ids": 3,
+      "observations": 8
+    },
+    {
+      "recipient_uei": "HMXCQJ8ADNL7",
+      "name": "ACCESSAGILITY LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "VLJKQQNBL2A5",
+      "name": "ADNET/ACCOUNTNET INC",
+      "parent_ids": 2,
+      "observations": 5
+    },
+    {
+      "recipient_uei": "G4P8ENP3FLM7",
+      "name": "ADVANCED SYSTEMS TECHNOLOGY & MANAGEMENT, INC.",
+      "parent_ids": 2,
+      "observations": 24
+    },
+    {
+      "recipient_uei": "URMLLRJ3E6H3",
+      "name": "AEGIS.NET, INC.",
+      "parent_ids": 2,
+      "observations": 77
+    },
+    {
+      "recipient_uei": "N8MCPJFMLSM4",
+      "name": "ALAMO CITY ENGINEERING SERVICES, INC.",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "CYX7XBK19BU4",
+      "name": "ANACAPA MICRO PRODUCTS, INC.",
+      "parent_ids": 2,
+      "observations": 8
+    },
+    {
+      "recipient_uei": "H8L4SLLMSV15",
+      "name": "ASRC FEDERAL DATA NETWORX, LLC",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "MX89BGD5FK75",
+      "name": "AT&T ENTERPRISES, LLC",
+      "parent_ids": 2,
+      "observations": 11
+    },
+    {
+      "recipient_uei": "P2S7GZFBCSJ1",
+      "name": "ATT MOBILITY LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "QTZUSH4MJ9V9",
+      "name": "AVYANCE LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "TRP2FSD3MF43",
+      "name": "BSREP II MBN LLC",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "J1ACL2JMJ7K5",
+      "name": "CAVALIER TELEPHONE, L.L.C.",
+      "parent_ids": 2,
+      "observations": 11
+    },
+    {
+      "recipient_uei": "FB1YSMJS66B6",
+      "name": "CC&C MANAGEMENT SERVICES, LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "CK77N4SCAJD3",
+      "name": "CELLCO PARTNERSHIP",
+      "parent_ids": 2,
+      "observations": 11
+    },
+    {
+      "recipient_uei": "VFPKHHHDDBR2",
+      "name": "CENTEVA LLC",
+      "parent_ids": 2,
+      "observations": 19
+    },
+    {
+      "recipient_uei": "TRKEP1HEBNS5",
+      "name": "CGI FEDERAL INC.",
+      "parent_ids": 2,
+      "observations": 104
+    },
+    {
+      "recipient_uei": "ZK84NAU2PBY3",
+      "name": "CHENEGA HEALTHCARE SERVICES LLC",
+      "parent_ids": 2,
+      "observations": 10
+    },
+    {
+      "recipient_uei": "EDG8CCZ57L68",
+      "name": "CHENEGA LOGISTICS, LLC",
+      "parent_ids": 2,
+      "observations": 9
+    },
+    {
+      "recipient_uei": "GAW7CXC21HD9",
+      "name": "CLARK BATY ASSOCIATES INC.",
+      "parent_ids": 2,
+      "observations": 8
+    },
+    {
+      "recipient_uei": "MV81KCD2FRN5",
+      "name": "CLIFTONLARSONALLEN LLP",
+      "parent_ids": 2,
+      "observations": 12
+    },
+    {
+      "recipient_uei": "CN3ZSPPKHLH5",
+      "name": "COMCAST BUSINESS COMMUNICATIONS, LLC",
+      "parent_ids": 2,
+      "observations": 9
+    },
+    {
+      "recipient_uei": "GSSFNLQJCWZ3",
+      "name": "COMCAST CABLE COMMUNICATIONS, LLC",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "QHF1FV2KBGH8",
+      "name": "COPPER RIVER ENTERPRISE SERVICES, LLC",
+      "parent_ids": 2,
+      "observations": 30
+    },
+    {
+      "recipient_uei": "G56PUALJ3KT5",
+      "name": "CORNELL UNIVERSITY",
+      "parent_ids": 2,
+      "observations": 15
+    },
+    {
+      "recipient_uei": "N8K7N7GJAZ73",
+      "name": "CQ-ROLL CALL, INC",
+      "parent_ids": 2,
+      "observations": 9
+    },
+    {
+      "recipient_uei": "LNGDKXU4TCJ7",
+      "name": "CUBE ROOT CORPORATION",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "J51WBL7M3E39",
+      "name": "CURTISS-WRIGHT FLOW CONTROL SERVICE, LLC",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "N1C5QLNPJLS4",
+      "name": "DELL FEDERAL SYSTEMS L.P",
+      "parent_ids": 2,
+      "observations": 11
+    },
+    {
+      "recipient_uei": "HJLSY7RZV8X6",
+      "name": "DELL MARKETING L.P.",
+      "parent_ids": 2,
+      "observations": 22
+    },
+    {
+      "recipient_uei": "R15MK4RSWRD3",
+      "name": "DISYS SOLUTIONS, INC.",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "F1N2KDGBDTU8",
+      "name": "DLT SOLUTIONS, LLC",
+      "parent_ids": 2,
+      "observations": 8
+    },
+    {
+      "recipient_uei": "K7MPSQUS6XC3",
+      "name": "EAGLE HEALTH, LLC",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "NUNVJJM2UYY1",
+      "name": "EMERGENT, LLC",
+      "parent_ids": 2,
+      "observations": 18
+    },
+    {
+      "recipient_uei": "YFNWL5CNBK41",
+      "name": "EQUINIX, INC.",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "YZV8MULLJNH5",
+      "name": "EVOLUTION MANAGEMENT, INC.",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "UQ31MGUMQNS5",
+      "name": "EXPERIAN INFORMATION SOLUTIONS INC",
+      "parent_ids": 2,
+      "observations": 8
+    },
+    {
+      "recipient_uei": "E17NYCW47M57",
+      "name": "EXPERIAN INFORMATION SOLUTIONS, INC.",
+      "parent_ids": 2,
+      "observations": 3
+    },
+    {
+      "recipient_uei": "KUQGSMJJ34L5",
+      "name": "FORENSIC DRUG & ALCOHOL TESTING LLC",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "KSE1ME58AQ17",
+      "name": "FRANKLIN COVEY CLIENT SALES INC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "GK9NQ13NH339",
+      "name": "G2SF LLC",
+      "parent_ids": 2,
+      "observations": 12
+    },
+    {
+      "recipient_uei": "EADLFP7Z72E5",
+      "name": "GEORGE MASON UNIVERSITY",
+      "parent_ids": 2,
+      "observations": 3
+    },
+    {
+      "recipient_uei": "SDAPDLJ5EZ33",
+      "name": "GREEN POWERED TECHNOLOGY LLC",
+      "parent_ids": 2,
+      "observations": 41
+    },
+    {
+      "recipient_uei": "Y479Y7CNRYJ7",
+      "name": "GSE PERFORMANCE SOLUTIONS, LLC",
+      "parent_ids": 2,
+      "observations": 19
+    },
+    {
+      "recipient_uei": "W6NMYSHZCJR5",
+      "name": "HERITAGE INTERIORS LLC",
+      "parent_ids": 2,
+      "observations": 14
+    },
+    {
+      "recipient_uei": "VCE5JFBRME47",
+      "name": "HURON CONSULTING SERVICES LLC",
+      "parent_ids": 2,
+      "observations": 33
+    },
+    {
+      "recipient_uei": "QHBLBNKKV4U3",
+      "name": "ICF INCORPORATED, L.L.C.",
+      "parent_ids": 2,
+      "observations": 68
+    },
+    {
+      "recipient_uei": "C1F4X69HBDN7",
+      "name": "IDEMIA AMERICA CORP",
+      "parent_ids": 2,
+      "observations": 2
+    },
+    {
+      "recipient_uei": "C19ELN62VL28",
+      "name": "IHS GLOBAL INC",
+      "parent_ids": 2,
+      "observations": 3
+    },
+    {
+      "recipient_uei": "KENEHCVQPTS9",
+      "name": "ILLINOIS DEPARTMENT OF INNOVATION & TECHNOLOGY",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "EUL7TR9MX1H9",
+      "name": "INDUSTRIAL SCIENTIFIC CORPORATION",
+      "parent_ids": 2,
+      "observations": 3
+    },
+    {
+      "recipient_uei": "FAK5JKUKRXJ1",
+      "name": "INFORMATION SYSTEMS LABORATORIES INC",
+      "parent_ids": 2,
+      "observations": 23
+    },
+    {
+      "recipient_uei": "Y3JVNNLSEML9",
+      "name": "INTERACTIVE COMMUNICATIONS SOLUTIONS GROUP, INC.",
+      "parent_ids": 2,
+      "observations": 2
+    },
+    {
+      "recipient_uei": "LMJJFDN4WC91",
+      "name": "IVY PLANNING GROUP LLC",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "T4KZHMLNCZL3",
+      "name": "JANUS ASSOCIATES, INC.",
+      "parent_ids": 2,
+      "observations": 15
+    },
+    {
+      "recipient_uei": "NUKYJ4GD9A35",
+      "name": "KAPTIVATE LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "XQ5PQDXYCP85",
+      "name": "KATOR, PARKS, WEISER AND WRIGHT P.L.L.C.",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "M6MGEMJPY3C1",
+      "name": "KEMA POWERTEST LLC",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "KFD5JAKKPAS9",
+      "name": "LANIER PARKING HOLDINGS INC",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "ZKR5F6EZNAD2",
+      "name": "MIDNIGHT SUN TECHNOLOGIES LLC",
+      "parent_ids": 2,
+      "observations": 14
+    },
+    {
+      "recipient_uei": "GK9HUFKC3LA4",
+      "name": "MIND YOUR BUSINESS INC",
+      "parent_ids": 2,
+      "observations": 11
+    },
+    {
+      "recipient_uei": "EB7XW4128N89",
+      "name": "NORTHRAMP LLC",
+      "parent_ids": 2,
+      "observations": 75
+    },
+    {
+      "recipient_uei": "G7RPMR7GT9P9",
+      "name": "OTIS ELEVATOR COMPANY",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "LMKMWBB9ABJ7",
+      "name": "PACIFIC RESEARCH & EVALUATION LLC",
+      "parent_ids": 2,
+      "observations": 25
+    },
+    {
+      "recipient_uei": "ZCCVNJ2LNMC3",
+      "name": "PARTNERSHIP FOR PUBLIC SERVICE INC",
+      "parent_ids": 2,
+      "observations": 3
+    },
+    {
+      "recipient_uei": "C37LHT42K5L7",
+      "name": "PATRIOT SHREDDING INC",
+      "parent_ids": 2,
+      "observations": 5
+    },
+    {
+      "recipient_uei": "ZBPQEJVECCT4",
+      "name": "PERATON INC.",
+      "parent_ids": 2,
+      "observations": 5
+    },
+    {
+      "recipient_uei": "T8JGE1LE8933",
+      "name": "POLITICO, LLC",
+      "parent_ids": 2,
+      "observations": 5
+    },
+    {
+      "recipient_uei": "FMHCHFPKMLZ4",
+      "name": "POTOMAC ELECTRIC POWER CO",
+      "parent_ids": 2,
+      "observations": 14
+    },
+    {
+      "recipient_uei": "P6KTNNHMA2B1",
+      "name": "PROJECT PERFORMANCE COMPANY, LLC",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "UCDDUN6A6S17",
+      "name": "RAPISCAN SYSTEMS INC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "E83BPDKCKUA8",
+      "name": "RIVA SOLUTIONS INC",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "LREGCX9JSJM7",
+      "name": "SABRE88, LLC",
+      "parent_ids": 2,
+      "observations": 24
+    },
+    {
+      "recipient_uei": "L2GVRNB9UBD8",
+      "name": "SALIENT FEDERAL SOLUTIONS, INC.",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "CEFCD41CLDJ8",
+      "name": "SHI INTERNATIONAL CORP",
+      "parent_ids": 2,
+      "observations": 15
+    },
+    {
+      "recipient_uei": "PEKVEFZZQBM9",
+      "name": "SKILLSOFT (US) LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "EJJMMJHYDFH6",
+      "name": "SOFTWARE INFORMATION RESOURCE CORP.",
+      "parent_ids": 2,
+      "observations": 20
+    },
+    {
+      "recipient_uei": "D9A9V7GJS7V8",
+      "name": "STERIGENICS U.S., LLC",
+      "parent_ids": 2,
+      "observations": 9
+    },
+    {
+      "recipient_uei": "Z82EX18BNGR4",
+      "name": "STEWART & STEVENSON POWER PRODUCTS LLC",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "DXUYQDBKRLJ9",
+      "name": "TECHNOLOGY SOLUTIONS PROVIDER, LLC",
+      "parent_ids": 2,
+      "observations": 2
+    },
+    {
+      "recipient_uei": "T43FQMV2P2S8",
+      "name": "THE SOUTHERN NEW ENGLAND TELEPHONE COMPANY",
+      "parent_ids": 2,
+      "observations": 8
+    },
+    {
+      "recipient_uei": "RD7MXJV7DKT9",
+      "name": "THE UNIVERSITY OF CENTRAL FLORIDA BOARD OF TRUSTEES",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "U8H9F5MLU957",
+      "name": "THREE WIRE SYSTEMS, LLC",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "UER4AJLUB8D5",
+      "name": "THUNDERCAT TECHNOLOGY, LLC",
+      "parent_ids": 2,
+      "observations": 21
+    },
+    {
+      "recipient_uei": "GNN3NDUFAE83",
+      "name": "TIME WARNER CABLE ENTERPRISES LLC",
+      "parent_ids": 2,
+      "observations": 4
+    },
+    {
+      "recipient_uei": "V4P1WQNT1FZ5",
+      "name": "TURNING POINT GLOBAL SOLUTIONS LLC",
+      "parent_ids": 2,
+      "observations": 5
+    },
+    {
+      "recipient_uei": "M23WHK6U2RJ3",
+      "name": "TYLER FEDERAL, LLC",
+      "parent_ids": 2,
+      "observations": 12
+    },
+    {
+      "recipient_uei": "YF8QFWJLNBV8",
+      "name": "UNITED PARCEL SERVICE CO.",
+      "parent_ids": 2,
+      "observations": 10
+    },
+    {
+      "recipient_uei": "MZZ7NLECXCJ8",
+      "name": "UNIVERSAL PARKING AND TRANSPORTATION LLC",
+      "parent_ids": 2,
+      "observations": 13
+    },
+    {
+      "recipient_uei": "V6AFQPN18437",
+      "name": "UNIVERSITY OF TEXAS AT AUSTIN",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "GEYFS4D96R55",
+      "name": "VERIZON BUSINESS NETWORK SERVICES LLC",
+      "parent_ids": 2,
+      "observations": 22
+    },
+    {
+      "recipient_uei": "UFPPJTUBUMK7",
+      "name": "VERIZON MARYLAND LLC",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "TSHVL1K9QDD9",
+      "name": "VERIZON NEW JERSEY INC",
+      "parent_ids": 2,
+      "observations": 7
+    },
+    {
+      "recipient_uei": "RR2HKAJUCXS9",
+      "name": "VERIZON PENNSYLVANIA LLC",
+      "parent_ids": 2,
+      "observations": 20
+    },
+    {
+      "recipient_uei": "RPUWKYL41MJ7",
+      "name": "WASHINGTON GAS LIGHT COMPANY",
+      "parent_ids": 2,
+      "observations": 6
+    },
+    {
+      "recipient_uei": "N8CCMQ19MMM5",
+      "name": "WERRES CORPORATION",
+      "parent_ids": 2,
+      "observations": 2
+    },
+    {
+      "recipient_uei": "ZPPAJEJ2T4Z7",
+      "name": "WINDSTREAM OHIO, LLC",
+      "parent_ids": 2,
+      "observations": 3
+    },
+    {
+      "recipient_uei": "EFMFNAELHYR5",
+      "name": "XEROX CORPORATION",
+      "parent_ids": 2,
+      "observations": 12
+    }
+  ],
+  "entity_grouping_sensitivity": [
+    {
+      "scenario": "recipient_uei",
+      "annual": [
+        {
+          "fy": 2022,
+          "groups": 397,
+          "hhi": 441.51648879789036,
+          "top_share": 0.13649811541086726
+        },
+        {
+          "fy": 2023,
+          "groups": 391,
+          "hhi": 438.2518274311737,
+          "top_share": 0.15059142150785454
+        },
+        {
+          "fy": 2024,
+          "groups": 364,
+          "hhi": 383.2119593360041,
+          "top_share": 0.13466353851858268
+        }
+      ]
+    },
+    {
+      "scenario": "parent_reported_on_action",
+      "annual": [
+        {
+          "fy": 2022,
+          "groups": 382,
+          "hhi": 443.9814467312098,
+          "top_share": 0.13745144412735283
+        },
+        {
+          "fy": 2023,
+          "groups": 364,
+          "hhi": 439.6922664761939,
+          "top_share": 0.15066213418200058
+        },
+        {
+          "fy": 2024,
+          "groups": 376,
+          "hhi": 370.41193482562613,
+          "top_share": 0.1342714050681308
+        }
+      ]
+    },
+    {
+      "scenario": "latest_observed_parent",
+      "annual": [
+        {
+          "fy": 2022,
+          "groups": 378,
+          "hhi": 443.125148868787,
+          "top_share": 0.13674572330564133
+        },
+        {
+          "fy": 2023,
+          "groups": 370,
+          "hhi": 439.70274272321114,
+          "top_share": 0.15063121553856829
+        },
+        {
+          "fy": 2024,
+          "groups": 346,
+          "hhi": 384.391375112898,
+          "top_share": 0.1346763848491848
+        }
+      ]
+    }
+  ],
+  "september_award_mix_bootstrap": [
+    {
+      "fy": 2022,
+      "awards": 836,
+      "replicates": 1000,
+      "p025": 0.17469972547493162,
+      "p975": 0.3032982950044585
+    },
+    {
+      "fy": 2023,
+      "awards": 799,
+      "replicates": 1000,
+      "p025": 0.05704522174239346,
+      "p975": 0.16180326194601824
+    },
+    {
+      "fy": 2024,
+      "awards": 799,
+      "replicates": 1000,
+      "p025": 0.10245177886202332,
+      "p975": 0.21029964276933502
+    }
+  ],
+  "bootstrap_note": "Seed 20261025; 1000 resamples of whole awards per FY. Composition sensitivity, not population confidence or causal inference.",
+  "sql_source": "civicledger/reports.py",
+  "case_count": 3,
+  "source_snapshot": "20261026T015420Z",
+  "source_csv_sha256": "c0bd912f23dd53a26c0d83c2cd79d0c448959784752fca0a6945f7bdfc84591c"
+}

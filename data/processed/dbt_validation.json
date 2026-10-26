@@ -1,0 +1,126 @@
+{
+  "snapshot_id": "20261026T015420Z",
+  "public_csv_sha256": "c0bd912f23dd53a26c0d83c2cd79d0c448959784752fca0a6945f7bdfc84591c",
+  "dbt_version": "1.12.6",
+  "generated_at": "2026-10-26T01:59:15.362828Z",
+  "elapsed_time": 1.7990069389343262,
+  "models_built": 4,
+  "data_tests": 15,
+  "all_passed": true,
+  "results": [
+    {
+      "id": "test.civicledger.source_not_null_warehouse_fact_transactions_award_id.eaeba9f0fb",
+      "status": "pass",
+      "execution_time": 0.17467188835144043,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.source_not_null_warehouse_fact_transactions_obligation.86054ed1dd",
+      "status": "pass",
+      "execution_time": 0.056242942810058594,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.source_not_null_warehouse_fact_transactions_recipient_id.79ce9bd42b",
+      "status": "pass",
+      "execution_time": 0.05264115333557129,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.source_not_null_warehouse_fact_transactions_transaction_id.701b7a6e55",
+      "status": "pass",
+      "execution_time": 0.0445859432220459,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.source_unique_warehouse_fact_transactions_transaction_id.ac72b0c0c1",
+      "status": "pass",
+      "execution_time": 0.04577469825744629,
+      "failures": 0
+    },
+    {
+      "id": "model.civicledger.recipient_cohorts",
+      "status": "success",
+      "execution_time": 0.48841404914855957,
+      "failures": null
+    },
+    {
+      "id": "model.civicledger.competition_award_year",
+      "status": "success",
+      "execution_time": 0.12114906311035156,
+      "failures": null
+    },
+    {
+      "id": "model.civicledger.revision_lag",
+      "status": "success",
+      "execution_time": 0.11443305015563965,
+      "failures": null
+    },
+    {
+      "id": "test.civicledger.not_null_recipient_cohorts_positive_net_share.226b4656a7",
+      "status": "pass",
+      "execution_time": 0.1038510799407959,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.not_null_recipient_cohorts_recipient_year_key.91f0d2a12c",
+      "status": "pass",
+      "execution_time": 0.08405399322509766,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.unique_recipient_cohorts_recipient_year_key.cd0e8e97c8",
+      "status": "pass",
+      "execution_time": 0.04654097557067871,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.share_sums_to_one",
+      "status": "pass",
+      "execution_time": 0.1051018238067627,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.award_year_join_preserves_actions",
+      "status": "pass",
+      "execution_time": 0.04942202568054199,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.not_null_competition_award_year_award_id.38db6a24af",
+      "status": "pass",
+      "execution_time": 0.034307003021240234,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.award_year_money_reconciles",
+      "status": "pass",
+      "execution_time": 0.22543621063232422,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.not_null_competition_award_year_award_year_key.daefa59f15",
+      "status": "pass",
+      "execution_time": 0.2174997329711914,
+      "failures": 0
+    },
+    {
+      "id": "test.civicledger.unique_competition_award_year_award_year_key.1744225dae",
+      "status": "pass",
+      "execution_time": 0.06521081924438477,
+      "failures": 0
+    },
+    {
+      "id": "model.civicledger.peer_award_year",
+      "status": "success",
+      "execution_time": 0.07042479515075684,
+      "failures": null
+    },
+    {
+      "id": "test.civicledger.peer_denominators",
+      "status": "pass",
+      "execution_time": 0.0296478271484375,
+      "failures": 0
+    }
+  ]
+}

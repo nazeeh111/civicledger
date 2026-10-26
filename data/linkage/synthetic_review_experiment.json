@@ -1,0 +1,2401 @@
+{
+  "scope": "Real observed records and amounts with identifiers deliberately masked; oracle answers use held-out identifiers. Not a live missing-ID population.",
+  "policies": [
+    {
+      "policy": "decision_sensitive",
+      "budget": 0,
+      "replicates": 10,
+      "hhi_absolute_error": 42.744392918048945,
+      "hhi_absolute_error_sd": 0.0013821616936879435,
+      "hhi_scenario_width": 0.003691936685299879,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9923686665693529,
+      "ranking_stability_sd": 0.0,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "budget": 1,
+      "replicates": 10,
+      "hhi_absolute_error": 42.74284062208674,
+      "hhi_absolute_error_sd": 0.002347324555376401,
+      "hhi_scenario_width": 0.0011075810055899637,
+      "hhi_scenario_width_sd": 0.0017833748476586127,
+      "ranking_stability": 0.9934360555686172,
+      "ranking_stability_sd": 0.0007365683868133454,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "budget": 3,
+      "replicates": 10,
+      "hhi_absolute_error": 42.74239722183847,
+      "hhi_absolute_error_sd": 0.002655929186912669,
+      "hhi_scenario_width": 0.0,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9938935079968735,
+      "ranking_stability_sd": 1.1702778228589004e-16,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "budget": 5,
+      "replicates": 10,
+      "hhi_absolute_error": 42.741091327151686,
+      "hhi_absolute_error_sd": 0.0005706282597025755,
+      "hhi_scenario_width": 0.0,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9938935079968735,
+      "ranking_stability_sd": 1.1702778228589004e-16,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "random",
+      "budget": 0,
+      "replicates": 10,
+      "hhi_absolute_error": 42.744392918048945,
+      "hhi_absolute_error_sd": 0.0013821616936879435,
+      "hhi_scenario_width": 0.003691936685299879,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9923686665693529,
+      "ranking_stability_sd": 0.0,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "random",
+      "budget": 1,
+      "replicates": 10,
+      "hhi_absolute_error": 42.744077324334896,
+      "hhi_absolute_error_sd": 0.0019778973113297777,
+      "hhi_scenario_width": 0.0029535493482399033,
+      "hhi_scenario_width_sd": 0.0015566571870239871,
+      "ranking_stability": 0.9926736348548572,
+      "ranking_stability_sd": 0.0006429295975397463,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "random",
+      "budget": 3,
+      "replicates": 10,
+      "hhi_absolute_error": 42.74277759978584,
+      "hhi_absolute_error_sd": 0.002685093068891088,
+      "hhi_scenario_width": 0.0,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9938935079968735,
+      "ranking_stability_sd": 1.1702778228589004e-16,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "random",
+      "budget": 5,
+      "replicates": 10,
+      "hhi_absolute_error": 42.741091327151686,
+      "hhi_absolute_error_sd": 0.0005706282597025755,
+      "hhi_scenario_width": 0.0,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9938935079968735,
+      "ranking_stability_sd": 1.1702778228589004e-16,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "budget": 0,
+      "replicates": 10,
+      "hhi_absolute_error": 42.744392918048945,
+      "hhi_absolute_error_sd": 0.0013821616936879435,
+      "hhi_scenario_width": 0.003691936685299879,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9923686665693529,
+      "ranking_stability_sd": 0.0,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "budget": 1,
+      "replicates": 10,
+      "hhi_absolute_error": 42.7444198379922,
+      "hhi_absolute_error_sd": 0.00243120552116362,
+      "hhi_scenario_width": 0.003691936685299879,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9923686665693529,
+      "ranking_stability_sd": 0.0,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "budget": 3,
+      "replicates": 10,
+      "hhi_absolute_error": 42.7431579777332,
+      "hhi_absolute_error_sd": 0.002663447084866557,
+      "hhi_scenario_width": 0.0,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9938935079968735,
+      "ranking_stability_sd": 1.1702778228589004e-16,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "budget": 5,
+      "replicates": 10,
+      "hhi_absolute_error": 42.741091327151686,
+      "hhi_absolute_error_sd": 0.0005706282597025755,
+      "hhi_scenario_width": 0.0,
+      "hhi_scenario_width_sd": 0.0,
+      "ranking_stability": 0.9938935079968735,
+      "ranking_stability_sd": 1.1702778228589004e-16,
+      "top_three_membership_stability": 1.0,
+      "top_three_membership_stability_sd": 0.0
+    }
+  ],
+  "raw_replicates": [
+    {
+      "policy": "random",
+      "replicate": 0,
+      "budget": 0,
+      "hhi_estimate": 1275.3555051644948,
+      "hhi_absolute_error": 42.74355221902829,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 0,
+      "budget": 1,
+      "hhi_estimate": 1275.3541057898622,
+      "hhi_absolute_error": 42.74495159366097,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 0,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 0,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 1,
+      "budget": 0,
+      "hhi_estimate": 1275.3554618996118,
+      "hhi_absolute_error": 42.74359548391135,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 1,
+      "budget": 1,
+      "hhi_estimate": 1275.3554258455426,
+      "hhi_absolute_error": 42.74363153798049,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 1,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 1,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 2,
+      "budget": 0,
+      "hhi_estimate": 1275.3554907428672,
+      "hhi_absolute_error": 42.7435666406559,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 2,
+      "budget": 1,
+      "hhi_estimate": 1275.3561108728572,
+      "hhi_absolute_error": 42.74294651066589,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 2,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 2,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 3,
+      "budget": 0,
+      "hhi_estimate": 1275.3514039836455,
+      "hhi_absolute_error": 42.74765339987766,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 3,
+      "budget": 1,
+      "hhi_estimate": 1275.3558657051867,
+      "hhi_absolute_error": 42.743191678336416,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 3,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 3,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 4,
+      "budget": 0,
+      "hhi_estimate": 1275.3553465265904,
+      "hhi_absolute_error": 42.743710856932694,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 4,
+      "budget": 1,
+      "hhi_estimate": 1275.3540769466067,
+      "hhi_absolute_error": 42.74498043691642,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 4,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 4,
+      "budget": 5,
+      "hhi_estimate": 1275.3577754587368,
+      "hhi_absolute_error": 42.741281924786335,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 5,
+      "budget": 0,
+      "hhi_estimate": 1275.3534856598721,
+      "hhi_absolute_error": 42.74557172365098,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 5,
+      "budget": 1,
+      "hhi_estimate": 1275.3541634763728,
+      "hhi_absolute_error": 42.7448939071503,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 5,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 5,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 6,
+      "budget": 0,
+      "hhi_estimate": 1275.3553897914735,
+      "hhi_absolute_error": 42.74366759204963,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 6,
+      "budget": 1,
+      "hhi_estimate": 1275.3505800282956,
+      "hhi_absolute_error": 42.74847735522758,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 6,
+      "budget": 3,
+      "hhi_estimate": 1275.3581284495558,
+      "hhi_absolute_error": 42.740928933967325,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 6,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 7,
+      "budget": 0,
+      "hhi_estimate": 1275.355368159032,
+      "hhi_absolute_error": 42.74368922449116,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 7,
+      "budget": 1,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 7,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 7,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 8,
+      "budget": 0,
+      "hhi_estimate": 1275.3536875626596,
+      "hhi_absolute_error": 42.745369820863516,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 8,
+      "budget": 1,
+      "hhi_estimate": 1275.3553465265904,
+      "hhi_absolute_error": 42.743710856932694,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 8,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 8,
+      "budget": 5,
+      "hhi_estimate": 1275.3563844070352,
+      "hhi_absolute_error": 42.74267297648794,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 9,
+      "budget": 0,
+      "hhi_estimate": 1275.3555051644948,
+      "hhi_absolute_error": 42.74355221902829,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 9,
+      "budget": 1,
+      "hhi_estimate": 1275.3559378133252,
+      "hhi_absolute_error": 42.743119570197905,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 9,
+      "budget": 3,
+      "hhi_estimate": 1275.3505800282956,
+      "hhi_absolute_error": 42.74847735522758,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "random",
+      "replicate": 9,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 0,
+      "budget": 0,
+      "hhi_estimate": 1275.3555051644948,
+      "hhi_absolute_error": 42.74355221902829,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 0,
+      "budget": 1,
+      "hhi_estimate": 1275.3541057898622,
+      "hhi_absolute_error": 42.74495159366097,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 0,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 0,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 1,
+      "budget": 0,
+      "hhi_estimate": 1275.3554618996118,
+      "hhi_absolute_error": 42.74359548391135,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 1,
+      "budget": 1,
+      "hhi_estimate": 1275.356038764719,
+      "hhi_absolute_error": 42.74301861880417,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 1,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 1,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 2,
+      "budget": 0,
+      "hhi_estimate": 1275.3554907428672,
+      "hhi_absolute_error": 42.7435666406559,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 2,
+      "budget": 1,
+      "hhi_estimate": 1275.3561108728572,
+      "hhi_absolute_error": 42.74294651066589,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 2,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 2,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 3,
+      "budget": 0,
+      "hhi_estimate": 1275.3514039836455,
+      "hhi_absolute_error": 42.74765339987766,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 3,
+      "budget": 1,
+      "hhi_estimate": 1275.3558657051867,
+      "hhi_absolute_error": 42.743191678336416,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 3,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 3,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 4,
+      "budget": 0,
+      "hhi_estimate": 1275.3553465265904,
+      "hhi_absolute_error": 42.743710856932694,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 4,
+      "budget": 1,
+      "hhi_estimate": 1275.3540769466067,
+      "hhi_absolute_error": 42.74498043691642,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 4,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 4,
+      "budget": 5,
+      "hhi_estimate": 1275.3577754587368,
+      "hhi_absolute_error": 42.741281924786335,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 5,
+      "budget": 0,
+      "hhi_estimate": 1275.3534856598721,
+      "hhi_absolute_error": 42.74557172365098,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 5,
+      "budget": 1,
+      "hhi_estimate": 1275.3541634763728,
+      "hhi_absolute_error": 42.7448939071503,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 5,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 5,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 6,
+      "budget": 0,
+      "hhi_estimate": 1275.3553897914735,
+      "hhi_absolute_error": 42.74366759204963,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 6,
+      "budget": 1,
+      "hhi_estimate": 1275.3481860381012,
+      "hhi_absolute_error": 42.750871345421956,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 6,
+      "budget": 3,
+      "hhi_estimate": 1275.3543246700822,
+      "hhi_absolute_error": 42.74473271344095,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 6,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 7,
+      "budget": 0,
+      "hhi_estimate": 1275.355368159032,
+      "hhi_absolute_error": 42.74368922449116,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 7,
+      "budget": 1,
+      "hhi_estimate": 1275.3559666565807,
+      "hhi_absolute_error": 42.743090726942455,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 7,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 7,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 8,
+      "budget": 0,
+      "hhi_estimate": 1275.3536875626596,
+      "hhi_absolute_error": 42.745369820863516,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 8,
+      "budget": 1,
+      "hhi_estimate": 1275.3559233916976,
+      "hhi_absolute_error": 42.743133991825516,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 8,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 8,
+      "budget": 5,
+      "hhi_estimate": 1275.3563844070352,
+      "hhi_absolute_error": 42.74267297648794,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 9,
+      "budget": 0,
+      "hhi_estimate": 1275.3555051644948,
+      "hhi_absolute_error": 42.74355221902829,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 9,
+      "budget": 1,
+      "hhi_estimate": 1275.3559378133252,
+      "hhi_absolute_error": 42.743119570197905,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 9,
+      "budget": 3,
+      "hhi_estimate": 1275.3505800282956,
+      "hhi_absolute_error": 42.74847735522758,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "uncertainty_only",
+      "replicate": 9,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 0,
+      "budget": 0,
+      "hhi_estimate": 1275.3555051644948,
+      "hhi_absolute_error": 42.74355221902829,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 0,
+      "budget": 1,
+      "hhi_estimate": 1275.3563844070352,
+      "hhi_absolute_error": 42.74267297648794,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 0,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 0,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 1,
+      "budget": 0,
+      "hhi_estimate": 1275.3554618996118,
+      "hhi_absolute_error": 42.74359548391135,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 1,
+      "budget": 1,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 1,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 1,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 2,
+      "budget": 0,
+      "hhi_estimate": 1275.3554907428672,
+      "hhi_absolute_error": 42.7435666406559,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 2,
+      "budget": 1,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 2,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 2,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 3,
+      "budget": 0,
+      "hhi_estimate": 1275.3514039836455,
+      "hhi_absolute_error": 42.74765339987766,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 3,
+      "budget": 1,
+      "hhi_estimate": 1275.3553321049628,
+      "hhi_absolute_error": 42.743725278560305,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 3,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 3,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 4,
+      "budget": 0,
+      "hhi_estimate": 1275.3553465265904,
+      "hhi_absolute_error": 42.743710856932694,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 4,
+      "budget": 1,
+      "hhi_estimate": 1275.3563844070352,
+      "hhi_absolute_error": 42.74267297648794,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 4,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 4,
+      "budget": 5,
+      "hhi_estimate": 1275.3577754587368,
+      "hhi_absolute_error": 42.741281924786335,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 5,
+      "budget": 0,
+      "hhi_estimate": 1275.3534856598721,
+      "hhi_absolute_error": 42.74557172365098,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 5,
+      "budget": 1,
+      "hhi_estimate": 1275.3553897914735,
+      "hhi_absolute_error": 42.74366759204963,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 5,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 5,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 6,
+      "budget": 0,
+      "hhi_estimate": 1275.3553897914735,
+      "hhi_absolute_error": 42.74366759204963,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 6,
+      "budget": 1,
+      "hhi_estimate": 1275.3505800282956,
+      "hhi_absolute_error": 42.74847735522758,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 6,
+      "budget": 3,
+      "hhi_estimate": 1275.3581284495558,
+      "hhi_absolute_error": 42.740928933967325,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 6,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 7,
+      "budget": 0,
+      "hhi_estimate": 1275.355368159032,
+      "hhi_absolute_error": 42.74368922449116,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 7,
+      "budget": 1,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 7,
+      "budget": 3,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 7,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 8,
+      "budget": 0,
+      "hhi_estimate": 1275.3536875626596,
+      "hhi_absolute_error": 42.745369820863516,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 8,
+      "budget": 1,
+      "hhi_estimate": 1275.3553465265904,
+      "hhi_absolute_error": 42.743710856932694,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 8,
+      "budget": 3,
+      "hhi_estimate": 1275.3543838077692,
+      "hhi_absolute_error": 42.74467357575395,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 8,
+      "budget": 5,
+      "hhi_estimate": 1275.3563844070352,
+      "hhi_absolute_error": 42.74267297648794,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 9,
+      "budget": 0,
+      "hhi_estimate": 1275.3555051644948,
+      "hhi_absolute_error": 42.74355221902829,
+      "hhi_scenario_width": 0.003691936685299879,
+      "ranking_stability": 0.9923686665693529,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 9,
+      "budget": 1,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 9,
+      "budget": 3,
+      "hhi_estimate": 1275.3505800282956,
+      "hhi_absolute_error": 42.74847735522758,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    },
+    {
+      "policy": "decision_sensitive",
+      "replicate": 9,
+      "budget": 5,
+      "hhi_estimate": 1275.3581875872428,
+      "hhi_absolute_error": 42.74086979628032,
+      "hhi_scenario_width": 0.0,
+      "ranking_stability": 0.9938935079968736,
+      "top_three_membership_stability": 1.0
+    }
+  ],
+  "queue": [
+    {
+      "id": "masked-1102-1105",
+      "component_id": "component-18",
+      "names": [
+        "ICF  L L C",
+        "ICF  L L C"
+      ],
+      "probability": 0.9984076433121015,
+      "partition_same_weight": 0.998046875,
+      "probability_label": "Held-out calibrated pair score; scenario weights are not calibrated cluster probabilities",
+      "decision_impact": 1.8516810458615784e-11,
+      "hhi_change": 0.9746363425028903,
+      "reason": "Review can change which three recipient exposure clusters are selected for contextual procurement review; high exposure is not evidence of wrongdoing.",
+      "evidence": [
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310020C0031_3100_-NONE-_-NONE-/"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310018F0045_3100_GS00F010CA_4732/"
+        }
+      ],
+      "separate": {
+        "hhi": 1274.3807281052884,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 1.0,
+        "scenario_count": 2,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "merged": {
+        "hhi": 1275.3553644477913,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.3816046966731898,
+        "scenario_count": 1022,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "decision": {
+        "label": "Which three positive-net exposure clusters receive contextual procurement review?",
+        "survives_pair_alternatives": true,
+        "interpretation": "The selected observations survive both conditional modal rankings.",
+        "scenario_top_three_membership_stability": 1.0,
+        "support_note": "Modal sampled partitions and scenario support, not confidence bounds or a claim of true identity."
+      },
+      "scope": "masked_identifier_experiment",
+      "review_status": "unreviewed",
+      "component_size": 2
+    },
+    {
+      "id": "masked-1578-1580",
+      "component_id": "component-25",
+      "names": [
+        "VECRA, INC.",
+        "VECAR INC"
+      ],
+      "probability": 0.9984076433121024,
+      "partition_same_weight": 0.615234375,
+      "probability_label": "Held-out calibrated pair score; scenario weights are not calibrated cluster probabilities",
+      "decision_impact": 9.575210967582852e-14,
+      "hhi_change": 0.006359979949365879,
+      "reason": "Review can change which three recipient exposure clusters are selected for contextual procurement review; high exposure is not evidence of wrongdoing.",
+      "evidence": [
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310023C0024_3100_-NONE-_-NONE-/"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310023C0024_3100_-NONE-_-NONE-/"
+        }
+      ],
+      "separate": {
+        "hhi": 1275.3495479828955,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.9898477157360406,
+        "scenario_count": 394,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "merged": {
+        "hhi": 1275.3559079628449,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.6174603174603175,
+        "scenario_count": 630,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "decision": {
+        "label": "Which three positive-net exposure clusters receive contextual procurement review?",
+        "survives_pair_alternatives": true,
+        "interpretation": "The selected observations survive both conditional modal rankings.",
+        "scenario_top_three_membership_stability": 1.0,
+        "support_note": "Modal sampled partitions and scenario support, not confidence bounds or a claim of true identity."
+      },
+      "scope": "masked_identifier_experiment",
+      "review_status": "unreviewed",
+      "component_size": 3
+    },
+    {
+      "id": "masked-1579-1580",
+      "component_id": "component-25",
+      "names": [
+        "VECRA ",
+        "VECAR INC"
+      ],
+      "probability": 0.001040221914008353,
+      "partition_same_weight": 0.2353515625,
+      "probability_label": "Held-out calibrated pair score; scenario weights are not calibrated cluster probabilities",
+      "decision_impact": 6.876637687540465e-14,
+      "hhi_change": 0.006181567666999399,
+      "reason": "Review can change which three recipient exposure clusters are selected for contextual procurement review; high exposure is not evidence of wrongdoing.",
+      "evidence": [
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310023C0024_3100_-NONE-_-NONE-/"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310023C0024_3100_-NONE-_-NONE-/"
+        }
+      ],
+      "separate": {
+        "hhi": 1275.3520060195756,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.49808429118773945,
+        "scenario_count": 783,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "merged": {
+        "hhi": 1275.3581875872426,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 1.0,
+        "scenario_count": 241,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "decision": {
+        "label": "Which three positive-net exposure clusters receive contextual procurement review?",
+        "survives_pair_alternatives": true,
+        "interpretation": "The selected observations survive both conditional modal rankings.",
+        "scenario_top_three_membership_stability": 1.0,
+        "support_note": "Modal sampled partitions and scenario support, not confidence bounds or a claim of true identity."
+      },
+      "scope": "masked_identifier_experiment",
+      "review_status": "unreviewed",
+      "component_size": 3
+    },
+    {
+      "id": "masked-1578-1579",
+      "component_id": "component-25",
+      "names": [
+        "VECRA, INC.",
+        "VECRA "
+      ],
+      "probability": 0.9984076433121015,
+      "partition_same_weight": 0.619140625,
+      "probability_label": "Held-out calibrated pair score; scenario weights are not calibrated cluster probabilities",
+      "decision_impact": 6.5267521580765956e-15,
+      "hhi_change": 0.0016636868576824781,
+      "reason": "Review can change which three recipient exposure clusters are selected for contextual procurement review; high exposure is not evidence of wrongdoing.",
+      "evidence": [
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310023C0024_3100_-NONE-_-NONE-/"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_31310023C0024_3100_-NONE-_-NONE-/"
+        }
+      ],
+      "separate": {
+        "hhi": 1275.3544909173056,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.9974358974358974,
+        "scenario_count": 390,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "merged": {
+        "hhi": 1275.352827230448,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.6151419558359621,
+        "scenario_count": 634,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "decision": {
+        "label": "Which three positive-net exposure clusters receive contextual procurement review?",
+        "survives_pair_alternatives": true,
+        "interpretation": "The selected observations survive both conditional modal rankings.",
+        "scenario_top_three_membership_stability": 1.0,
+        "support_note": "Modal sampled partitions and scenario support, not confidence bounds or a claim of true identity."
+      },
+      "scope": "masked_identifier_experiment",
+      "review_status": "unreviewed",
+      "component_size": 3
+    },
+    {
+      "id": "masked-1263-1265",
+      "component_id": "component-21",
+      "names": [
+        "ABEL CINE TECH, LLC",
+        "ABE CINE ETCH LLC"
+      ],
+      "probability": 0.9984076433121015,
+      "partition_same_weight": 0.9990234375,
+      "probability_label": "Held-out calibrated pair score; scenario weights are not calibrated cluster probabilities",
+      "decision_impact": 1.0467145671624451e-17,
+      "hhi_change": 0.0010358008969433286,
+      "reason": "Review can change which three recipient exposure clusters are selected for contextual procurement review; high exposure is not evidence of wrongdoing.",
+      "evidence": [
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_NRCHQ4016P0002_3100_-NONE-_-NONE-/"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_NRCHQ4016P0002_3100_-NONE-_-NONE-/"
+        }
+      ],
+      "separate": {
+        "hhi": 1275.3544956505575,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 1.0,
+        "scenario_count": 1,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "merged": {
+        "hhi": 1275.3534598496606,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.3812316715542522,
+        "scenario_count": 1023,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "decision": {
+        "label": "Which three positive-net exposure clusters receive contextual procurement review?",
+        "survives_pair_alternatives": true,
+        "interpretation": "The selected observations survive both conditional modal rankings.",
+        "scenario_top_three_membership_stability": 1.0,
+        "support_note": "Modal sampled partitions and scenario support, not confidence bounds or a claim of true identity."
+      },
+      "scope": "masked_identifier_experiment",
+      "review_status": "unreviewed",
+      "component_size": 3
+    },
+    {
+      "id": "masked-1264-1265",
+      "component_id": "component-21",
+      "names": [
+        "ABEL CINE TECH ",
+        "ABE CINE ETCH LLC"
+      ],
+      "probability": 0.8846153846153849,
+      "partition_same_weight": 0.9990234375,
+      "probability_label": "Held-out calibrated pair score; scenario weights are not calibrated cluster probabilities",
+      "decision_impact": 1.0467145671624451e-17,
+      "hhi_change": 0.0010358008969433286,
+      "reason": "Review can change which three recipient exposure clusters are selected for contextual procurement review; high exposure is not evidence of wrongdoing.",
+      "evidence": [
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_NRCHQ4016P0002_3100_-NONE-_-NONE-/"
+        },
+        {
+          "url": "https://www.usaspending.gov/award/CONT_AWD_NRCHQ4016P0002_3100_-NONE-_-NONE-/"
+        }
+      ],
+      "separate": {
+        "hhi": 1275.3544956505575,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 1.0,
+        "scenario_count": 1,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "merged": {
+        "hhi": 1275.3534598496606,
+        "top_three": [
+          {
+            "names": [
+              "PUYENPA SERVICES, LLC",
+              "PUYENPA SERVICES ",
+              "PUYENPA SERVIESL LC"
+            ],
+            "record_ids": [
+              1686,
+              1687,
+              1688
+            ],
+            "net_obligations": 4702477.22,
+            "positive_net_exposure_share": 0.19481500361738724
+          },
+          {
+            "names": [
+              "DISYS SOLUTIONS, INC.",
+              "DISYS SOLUTIONS ",
+              "DISY SSOLUTONS INC"
+            ],
+            "record_ids": [
+              1128,
+              1129,
+              1130
+            ],
+            "net_obligations": 4459091.76,
+            "positive_net_exposure_share": 0.18473199054745482
+          },
+          {
+            "names": [
+              "TOWER FACILITY MANAGEMENT, LLC",
+              "TOWER FACILITY MANAGEMENT ",
+              "TOWERFACILITY AMNAGEMENT LLC",
+              "TOWER FICLITY MANAGEMENT LLC"
+            ],
+            "record_ids": [
+              789,
+              790,
+              791,
+              792,
+              793,
+              794
+            ],
+            "net_obligations": 4272640.39,
+            "positive_net_exposure_share": 0.17700765236958338
+          }
+        ],
+        "top_three_record_ids": [
+          789,
+          790,
+          791,
+          792,
+          793,
+          794,
+          1128,
+          1129,
+          1130,
+          1686,
+          1687,
+          1688
+        ],
+        "modal_partition_sample_support": 0.3812316715542522,
+        "scenario_count": 1023,
+        "ranking_label": "Top three positive-net exposure clusters in the conditional modal sampled partition; other components remain unresolved."
+      },
+      "decision": {
+        "label": "Which three positive-net exposure clusters receive contextual procurement review?",
+        "survives_pair_alternatives": true,
+        "interpretation": "The selected observations survive both conditional modal rankings.",
+        "scenario_top_three_membership_stability": 1.0,
+        "support_note": "Modal sampled partitions and scenario support, not confidence bounds or a claim of true identity."
+      },
+      "scope": "masked_identifier_experiment",
+      "review_status": "unreviewed",
+      "component_size": 3
+    }
+  ],
+  "records": 99,
+  "candidate_components": 31,
+  "excluded_oversized_components": [],
+  "candidate_pair_count": 118,
+  "truth_hhi": 1318.0990573835231,
+  "hhi_before_review": 1275.3534608611849,
+  "hhi_range": [
+    1274.3807281052884,
+    1275.3581875872428
+  ],
+  "replicates": 10,
+  "world_count": 256,
+  "seed": 20261025,
+  "loss": "Var(HHI/10000) + 0.1 \u00d7 mean Var(top-three cluster membership by observed record). Expected reduction after an oracle pair answer. Weights fixed before evaluation.",
+  "limitations": [
+    "Identifier equality is a proxy for legal-entity identity, not adjudicated ownership or misconduct.",
+    "Repeated simulation seeds quantify Monte Carlo/review-order variation, not a population confidence interval.",
+    "Composite-likelihood scenario weights are not calibrated partition probabilities.",
+    "Candidate edges require calibrated score >= 0.05; disconnected and oversized components stay separate, so support misses can leave irreducible error.",
+    "Review queries are simulated oracle responses, not human adjudication; equal pair budgets do not measure equal human time."
+  ],
+  "source": {
+    "snapshot_id": "20261026T015420Z",
+    "public_csv_sha256": "c0bd912f23dd53a26c0d83c2cd79d0c448959784752fca0a6945f7bdfc84591c"
+  },
+  "unsupported_reference_links": 8,
+  "reference_link_support_recall": 0.9365079365079365,
+  "reference_partition_supported": false
+}

@@ -1,0 +1,3 @@
+# Preserve hashed source CSV bytes and upstream license line endings.
+*.csv -text -whitespace
+app/dist/assets/fonts/*-OFL.txt -text -whitespace

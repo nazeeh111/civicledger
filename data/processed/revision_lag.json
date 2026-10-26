@@ -1,0 +1,23 @@
+[
+  {
+    "fiscal_year": 2022,
+    "transaction_records": 1705,
+    "median_days_action_to_last_modified": 0.0,
+    "p95_days_action_to_last_modified": 1257.5999999999997,
+    "revised_more_than_year_after_action": 347
+  },
+  {
+    "fiscal_year": 2023,
+    "transaction_records": 1465,
+    "median_days_action_to_last_modified": 0.0,
+    "p95_days_action_to_last_modified": 978.1999999999994,
+    "revised_more_than_year_after_action": 219
+  },
+  {
+    "fiscal_year": 2024,
+    "transaction_records": 1513,
+    "median_days_action_to_last_modified": 0.0,
+    "p95_days_action_to_last_modified": 736.7999999999997,
+    "revised_more_than_year_after_action": 170
+  }
+]

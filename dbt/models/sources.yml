@@ -1,0 +1,38 @@
+version: 2
+sources:
+  - name: warehouse
+    schema: main
+    tables:
+      - name: fact_transactions
+        description: One USAspending source transaction unique key as of the immutable retrieval snapshot.
+        columns:
+          - name: transaction_id
+            data_tests: [unique, not_null]
+          - name: award_id
+            data_tests: [not_null]
+          - name: obligation
+            data_tests: [not_null]
+          - name: recipient_id
+            data_tests: [not_null]
+      - name: recipient_year
+      - name: annual_summary
+models:
+  - name: recipient_cohorts
+    description: Supplier-year balances, share and observation-aware year-over-year changes. First/last are cohort observations, not federal market entry.
+    columns:
+      - name: recipient_year_key
+        data_tests: [unique, not_null]
+      - name: positive_net_share
+        description: max(recipient-year net,0) divided by all positive recipient-year net balances.
+        data_tests: [not_null]
+  - name: competition_award_year
+    description: One award-year with latest observed competition attributes; avoids counting offer reports repeatedly across modifications.
+    columns:
+      - name: award_year_key
+        data_tests: [unique, not_null]
+      - name: award_id
+        data_tests: [not_null]
+  - name: peer_award_year
+    description: FY x NAICS3 peers using one latest observed competition report per award-year; descriptive only.
+  - name: revision_lag
+    description: Last modified minus action date at the current snapshot, not a full revision event log.

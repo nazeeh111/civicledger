@@ -74,7 +74,7 @@ class Component:
     weights: np.ndarray
 
     def condition(self, a, b, same):
-        keep = np.array([(membership(p)[a] == membership(p)[b]) == same for p in self.partitions])
+        keep = pair_answers(self.partitions, a, b) == same
         if not keep.any():
             raise ValueError("Review answer contradicts every supported cluster partition")
         self.partitions = [p for p, k in zip(self.partitions, keep) if k]
@@ -137,7 +137,11 @@ def query_value(decision_vectors, answers):
 
 
 def pair_answers(partitions, a, b):
-    return np.array([membership(p)[a] == membership(p)[b] for p in partitions])
+    answers = []
+    for partition in partitions:
+        groups = membership(partition)
+        answers.append(groups[a] == groups[b])
+    return np.array(answers)
 
 
 def ece(y, p, bins=10):

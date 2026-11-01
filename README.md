@@ -1,14 +1,16 @@
-# CIVICLEDGER
+# CivicLedger
 
-**Public money, in context.** An evidence-first public procurement explorer with a reproducible DuckDB/dbt warehouse and a decision-sensitive entity review study.
+Trace U.S. federal contract actions from an agency to an award, recipient and source record. CivicLedger combines a public explorer, a reproducible DuckDB/dbt warehouse and a separate entity-linkage review study.
 
 [Open the explorer](https://civicledger.nazeeh1.chatgpt.site) · [Analytical findings](docs/EDA.md) · [Three case studies](docs/CASE_STUDIES.md) · [Linkage research](docs/LINKAGE.md) · [SQL cookbook](docs/SQL_COOKBOOK.md)
 
-The initial release covers **4,683 Nuclear Regulatory Commission contract actions, 1,588 awards and 537 legal recipient identifiers across FY2022–FY2024**. Net obligations are **$548,751,367.35**, including **−$17,977,335.52** in negative adjustments. These are commitments, not cash paid. The three annual net totals reconcile to USAspending's transaction-level aggregate to the cent using identical agency, award-type and action-date filters.
+The released Nuclear Regulatory Commission snapshot covers **4,683 contract actions across FY2022–FY2024**. Its net obligations are **$548,751,367.35**, which records commitments rather than cash paid.
 
-![CIVICLEDGER overview](docs/screenshots/overview.jpg)
+![CivicLedger overview](docs/screenshots/overview.jpg)
 
 ## Explore a conclusion, then inspect its evidence
+
+The snapshot contains 1,588 awards and 537 legal recipient identifiers. Recorded negative adjustments total **−$17,977,335.52**. The three annual net totals reconcile to USAspending's transaction-level aggregate to the cent using identical agency, award-type and action-date filters.
 
 Follow the agency to an award and its recipient. Inspect signed modifications, source links and cumulative in-window commitments. Compare industry peers, read every denominator and open the SQL behind the measures. Export a case dossier or a short decision memo. No account or API key is needed for the public explorer.
 
@@ -66,7 +68,7 @@ USAspending transactions are not OCDS tender/bid data. This release cannot calcu
 
 The source can revise prior transactions. Action-date histories in a current snapshot are not as-of historical database snapshots. First/last observation in FY2022–24 is not supplier formation/exit or full contract history. Reported parent attributes are not verified beneficial ownership. High spending, low competition and unusual timing can have lawful ordinary explanations.
 
-There are no adjudicated misconduct labels. CIVICLEDGER never reports fraud-detection accuracy, alleges corruption, or treats anomaly scores as proof of wrongdoing.
+There are no adjudicated misconduct labels. CivicLedger never reports fraud-detection accuracy, alleges corruption, or treats anomaly scores as proof of wrongdoing.
 
 ## Validation and release
 
@@ -76,4 +78,4 @@ See [RELEASE.md](docs/RELEASE.md) for the checked version, exact commands, limit
 
 DuckDB and dbt implement the warehouse; [Splink](https://github.com/moj-analytical-services/splink) executes the probabilistic baseline. The explorer renders the SQL outputs directly. [USAspending source contracts](https://github.com/fedspendingtransparency/usaspending-api) define the retrieved fields, and [OCP methodology](https://www.open-contracting.org/resources/red-flags-in-public-procurement-a-guide-to-using-data-to-detect-and-mitigate-risks/) informs the prerequisite audit. Exact inspected source revisions are recorded in `docs/source-revisions.json`.
 
-Code: [MIT](LICENSE). USAspending source implementation is CC0; source data are attributed to the U.S. Department of the Treasury/USAspending. Upstream software and documentation retain their respective licenses. No upstream code or OCP narrative is represented as an original CIVICLEDGER method.
+Code: [MIT](LICENSE). USAspending source implementation is CC0; source data are attributed to the U.S. Department of the Treasury/USAspending. Upstream software and documentation retain their respective licenses. No upstream code or OCP narrative is represented as an original CivicLedger method.

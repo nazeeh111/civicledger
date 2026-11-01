@@ -209,7 +209,7 @@
     $$('.nav-link').forEach(el=>{const active=el.dataset.tab===tab;el.classList.toggle('active',active);if(active)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
     $('#page-title').innerHTML=tabs[tab].title;$('#page-description').textContent=tabs[tab].description;$('#breadcrumb-view').textContent=tabs[tab].label;
     if(updateHash&&location.hash!==`#${tab}`)history.replaceState(null,'',`#${tab}`);
-    document.title=`CIVICLEDGER · ${tabs[tab].label}`;
+    document.title=`CivicLedger · ${tabs[tab].label}`;
   }
   function render() {renderOverview();renderExplorer();renderUncertainty();renderCases();renderMethods();switchTab(state.tab,false);}
   function navigateExplorer(award=null,recipient=null) {state.selectedAward=award;state.selectedRecipient=recipient;state.page=1;state.search='';renderExplorer();switchTab('explorer');window.scrollTo({top:0,behavior:'smooth'});}

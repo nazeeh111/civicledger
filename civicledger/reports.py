@@ -126,7 +126,7 @@ def build(root: Path = ROOT) -> dict:
          "record": largest, "denominator": overview["positive"],
          "metric_value": f"{float(largest['positive']/overview['positive']):.2%}",
          "metric_label": "of cohort positive commitments in this award",
-         "denominator_text": f"${overview['positive']:,.2f} in positive action obligations across all 4,683 cohort actions; numerator ${largest['positive']:,.2f} across {largest['actions']} actions in this award.",
+         "denominator_text": f"${overview['positive']:,.2f} in positive action obligations across all {overview['transactions']:,} cohort actions; numerator ${largest['positive']:,.2f} across {largest['actions']} actions in this award.",
          "formula": "sum(greatest(federal_action_obligation,0)) by award / cohort positive obligations",
          "sql": "with a as (select award_id,sum(positive_obligation) positive from fact_transactions group by 1) select *,positive/sum(positive) over() cohort_share from a order by positive desc limit 1;",
          "interpretation": "This is an observed funding stream, not the award ceiling or a cash payment. An existing contract can receive multiple funding actions.",

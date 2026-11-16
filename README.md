@@ -20,17 +20,17 @@ The original workflow prioritizes identity reviews by the expected change in a d
 
 ## Rebuild the released snapshot
 
-Requirements: Python 3.12 or 3.13, Node.js 20+, and the free [uv](https://docs.astral.sh/uv/) package manager. No billed APIs or credentials.
+Current source is an unreleased `1.0.1.dev0` generation; the published v1.0.0 release retains its own behavior and evidence. Requirements: Python 3.12 or 3.13, Node.js 20+, and the free [uv](https://docs.astral.sh/uv/) package manager. No billed APIs or credentials.
 
 ```sh
 git clone https://github.com/nazeeh111/civicledger.git
 cd civicledger
 uv sync --frozen --extra test
 uv run python -m civicledger.reproduce --test
-uv run python -m http.server 8000 --directory app/dist
+uv run python -m civicledger.workspace --port 8000
 ```
 
-Open `http://localhost:8000`. The default command uses the published, minimized CSV and its SHA-256 manifest, rebuilds SQL tables and dbt models, reruns EDA and linkage experiments, regenerates explorer projections, and runs tests. It refuses a CSV whose hash differs from its manifest. No network data retrieval is needed for this path after installing dependencies.
+Open `http://localhost:8000`. The default command stages the minimized CSV and its SHA-256 manifest, rebuilds SQL tables and dbt models, reruns EDA and linkage experiments, regenerates explorer projections, and runs tests before atomically publishing one local generation. It refuses a CSV whose hash differs from its manifest. No network data retrieval is needed for this path after installing dependencies.
 
 To retrieve a **new** source snapshot:
 
@@ -39,6 +39,8 @@ uv run python -m civicledger.reproduce --refresh --test
 ```
 
 Historical records can be revised by the source, so a fresh retrieval can produce different totals. Each refresh retains a new raw directory, request body, retrieval timestamp, original ZIP/CSV hashes and source revision fields. The public CSV removes unnecessary addresses, telephone/fax fields, officer names/pay and whole descriptions containing contact details. Original full-field raw archives remain local and are excluded from Git and the public release. Their hashes and acquisition code are included. The source is public USAspending data; no personal credential is required.
+
+The local workspace verifies and pins one generation for the entire browser session. Save a filtered investigation as JSON and reopen it in the same generation; its source, query identity, selected records and metrics are checked before restoring the view. The notes field records questions and conditional identity previews remain explicitly hypothetical. Reopening against a different generation is refused. To reopen a saved investigation after a newer build, use the generation ID in its `source` field: `uv run python -m civicledger.workspace --generation GENERATION_ID`. The workspace validates that retained generation and does not change the current pointer. To rebuild only the warehouse while reusing matching report and linkage evidence, run `uv run python -m civicledger.warehouse`. The previous complete generation remains available if a staged build fails. The workspace serves only declared files whose hashes match the verified generation; unexpected public files, symbolic links, or public files over 16 MiB stop publication. Older local generations lacking the complete public and case-evidence manifest are refused by this reader; inspect them only with their corresponding older reader rather than silently treating them as verified. Hashes detect changes but do not authenticate who created the data.
 
 For a faster warehouse/report iteration, `--skip-linkage` retains the existing linkage evidence. Do not use that option when changing linkage inputs for a release. A full release uses the default complete rebuild.
 

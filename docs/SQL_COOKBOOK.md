@@ -1,6 +1,6 @@
 # SQL cookbook
 
-Open `data/warehouse.duckdb` with DuckDB, or connect through Python. All examples operate on real data; values are signed unless a formula explicitly states otherwise. The complete source-to-metric transformations are in `sql/01_warehouse.sql`, dbt models and the export code.
+Resolve `data/current` once and open its `data/warehouse.duckdb` read-only with DuckDB, or connect through Python. Resolving the generation once prevents a concurrent publication from mixing artifacts. All examples operate on real data; values are signed unless a formula explicitly states otherwise. The complete source-to-metric transformations are in `sql/01_warehouse.sql`, dbt models and the export code.
 
 ## Reconcile commitments and preserve deobligations
 

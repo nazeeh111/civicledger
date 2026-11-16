@@ -10,6 +10,7 @@
   const pct = (value, digits = 1) => value == null || !Number.isFinite(Number(value)) ? 'Unavailable' : `${(Number(value) * 100).toFixed(digits)}%`;
   const dec = (value, digits = 0) => value == null || !Number.isFinite(Number(value)) ? 'Unavailable' : Number(value).toLocaleString('en-US',{maximumFractionDigits:digits,minimumFractionDigits:digits});
   const sum = (rows, field) => rows.reduce((a,r) => a + num(typeof field === 'function' ? field(r) : r[field]), 0);
+  const moneySum = (rows, field) => rows.reduce((total,r) => { const value=Number(typeof field==='function'?field(r):r[field]); if(!Number.isFinite(value)||!Number.isSafeInteger(Math.round(value*100))||Math.abs(value*100-Math.round(value*100))>1e-6||!Number.isSafeInteger(total+Math.round(value*100))) throw Error('Invalid monetary value'); return total+Math.round(value*100); },0)/100;
   const groupBy = (rows, key) => rows.reduce((a,r) => { const k=typeof key==='function'?key(r):r[key]; (a[k] ||= []).push(r); return a; }, {});
   const get = (obj, keys, fallback) => { for (const key of keys) if (obj?.[key] != null) return obj[key]; return fallback; };
   const fmtDate = value => { if (!value) return 'Not reported'; const d = new Date(`${String(value).slice(0,10)}T12:00:00Z`); return Number.isNaN(d.valueOf()) ? String(value) : new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}).format(d); };
@@ -29,8 +30,11 @@
     flow:{title:'Agency → award → recipient',formula:'Selected agency transaction obligations are grouped by award_id and attributed to the recipient reported on each action. Award summary totals are never added across modifications.',sql:'SELECT agency_name, award_id, recipient_id,\n SUM(obligation) AS net_obligations, COUNT(*) AS actions\nFROM fact_transactions\nWHERE fiscal_year = :fiscal_year\nGROUP BY agency_name,award_id,recipient_id;',caveat:'The explorer shows prime-award commitments for the bounded cohort. It does not show all government spending, cash paid, or complete subcontracting relationships.'}
   };
   function normalise(raw) {
-    const meta = raw.meta || raw.metadata || raw.scope || {};
-    let tx = raw.transactions || raw.fact_transactions || [];
+    const meta = raw.meta;
+    if(!meta||!Array.isArray(raw.transactions)||!Array.isArray(raw.awards)) throw Error('Incomplete warehouse projection');
+    const seen=new Set();
+    for(const r of raw.transactions) { if(typeof r.transaction_id!=='string'||!r.transaction_id||seen.has(r.transaction_id)||typeof r.award_id!=='string'||!r.award_id||typeof r.recipient_id!=='string'||!r.recipient_id||!Number.isInteger(r.fiscal_year)||typeof r.obligation!=='number'||!Number.isFinite(r.obligation)||!Number.isSafeInteger(Math.round(r.obligation*100))) throw Error('Invalid warehouse transaction'); seen.add(r.transaction_id); }
+    let tx = raw.transactions;
     tx = tx.map((r,i) => ({...r,transaction_id:get(r,['transaction_id','id','transaction_unique_id'],`row-${i}`),award_id:String(get(r,['award_id','generated_unique_award_id','award_unique_id','generated_internal_id'],'')),recipient_id:String(get(r,['recipient_id','recipient_uei','uei','recipient_unique_id'],get(r,['recipient_name','name'],`unresolved-${i}`))),recipient_name:get(r,['recipient_name','recipient','name'],'Unreported recipient'),action_date:get(r,['action_date','date','Action Date'],null),fiscal_year:num(get(r,['fiscal_year','fy'],0)),obligation:num(get(r,['obligation','federal_action_obligation','transaction_amount','federal_action_obligated'],0)),competition:get(r,['competition','extent_competed','extent_competed_code'],null),offers_received:get(r,['offers_received','number_of_offers_received'],null),naics:get(r,['naics','naics_code'],'Unreported'),description:get(r,['description','award_description'],'No description reported'),source_url:safeUrl(get(r,['source_url','url'],`https://www.usaspending.gov/award/${encodeURIComponent(get(r,['award_id','generated_unique_award_id'],''))}`))}));
     const grouped = groupBy(tx,'award_id');
     let awards = raw.awards || raw.award_summaries || [];
@@ -42,17 +46,17 @@
   function selectedTx() { return state.data.transactions.filter(r=>state.year==='all'||String(r.fiscal_year)===state.year); }
   function selectedAwards() {
     const rows=selectedTx(); const grouped=groupBy(rows,'award_id'); const byId=new Map(state.data.awards.map(r=>[r.award_id,r]));
-    return Object.entries(grouped).map(([id,tx])=>({...byId.get(id),award_id:id,recipient_id:tx.at(-1).recipient_id,recipient_name:tx.at(-1).recipient_name,recipient_ids:[...new Set(tx.map(t=>t.recipient_id))],recipient_names:[...new Set(tx.map(t=>t.recipient_name))],description:byId.get(id)?.description||tx.at(-1).description,source_url:byId.get(id)?.source_url||tx.at(-1).source_url,net_obligations:sum(tx,'obligation'),positive_obligations:sum(tx,r=>Math.max(0,r.obligation)),transaction_count:tx.length,first_action:tx.map(r=>r.action_date).sort()[0],last_action:tx.map(r=>r.action_date).sort().at(-1)})).sort((a,b)=>b.positive_obligations-a.positive_obligations);
+    return Object.entries(grouped).map(([id,tx])=>({...byId.get(id),award_id:id,recipient_id:tx.at(-1).recipient_id,recipient_name:tx.at(-1).recipient_name,recipient_ids:[...new Set(tx.map(t=>t.recipient_id))],recipient_names:[...new Set(tx.map(t=>t.recipient_name))],description:byId.get(id)?.description||tx.at(-1).description,source_url:byId.get(id)?.source_url||tx.at(-1).source_url,net_obligations:moneySum(tx,'obligation'),positive_obligations:moneySum(tx,r=>Math.max(0,r.obligation)),transaction_count:tx.length,first_action:tx.map(r=>r.action_date).sort()[0],last_action:tx.map(r=>r.action_date).sort().at(-1)})).sort((a,b)=>b.positive_obligations-a.positive_obligations);
   }
   function awardsForRecipient(id) {
     const tx=selectedTx().filter(t=>t.recipient_id===id),ids=new Set(tx.map(t=>t.award_id));
-    return selectedAwards().filter(a=>ids.has(a.award_id)).map(a=>({...a,full_award_net_obligations:a.net_obligations,attributed_net_obligations:sum(tx.filter(t=>t.award_id===a.award_id),'obligation'),attributed_transaction_count:tx.filter(t=>t.award_id===a.award_id).length,attributed_last_action:tx.filter(t=>t.award_id===a.award_id).map(t=>t.action_date).sort().at(-1)}));
+    return selectedAwards().filter(a=>ids.has(a.award_id)).map(a=>({...a,full_award_net_obligations:a.net_obligations,attributed_net_obligations:moneySum(tx.filter(t=>t.award_id===a.award_id),'obligation'),attributed_transaction_count:tx.filter(t=>t.award_id===a.award_id).length,attributed_last_action:tx.filter(t=>t.award_id===a.award_id).map(t=>t.action_date).sort().at(-1)}));
   }
-  function recipientRows(rows=selectedTx()) { return Object.entries(groupBy(rows,'recipient_id')).map(([id,tx])=>({recipient_id:id,recipient_name:tx.at(-1).recipient_name,net_obligations:sum(tx,'obligation'),positive_obligations:sum(tx,r=>Math.max(0,r.obligation)),concentration_weight:Math.max(sum(tx,'obligation'),0),awards:new Set(tx.map(r=>r.award_id)).size,transactions:tx.length})).sort((a,b)=>b.concentration_weight-a.concentration_weight); }
+  function recipientRows(rows=selectedTx()) { return Object.entries(groupBy(rows,'recipient_id')).map(([id,tx])=>({recipient_id:id,recipient_name:tx.at(-1).recipient_name,net_obligations:moneySum(tx,'obligation'),positive_obligations:moneySum(tx,r=>Math.max(0,r.obligation)),concentration_weight:Math.max(moneySum(tx,'obligation'),0),awards:new Set(tx.map(r=>r.award_id)).size,transactions:tx.length})).sort((a,b)=>b.concentration_weight-a.concentration_weight); }
   function stats(rows=selectedTx()) {
-    const positive=sum(rows,r=>Math.max(0,r.obligation)); const recipients=recipientRows(rows); const concentrationDenominator=sum(recipients,'concentration_weight');
+    const positive=moneySum(rows,r=>Math.max(0,r.obligation)); const recipients=recipientRows(rows); const concentrationDenominator=moneySum(recipients,'concentration_weight');
     const competition=rows.reduce((a,r)=>{a[competitionClass(r.competition)]++;return a;},{competed:0,noncompetitive:0,unknown:0});
-    return {net:sum(rows,'obligation'),positive,concentrationDenominator,negative:sum(rows,r=>Math.min(0,r.obligation)),transactions:rows.length,awards:new Set(rows.map(r=>r.award_id)).size,recipients:recipients.length,hhi:concentrationDenominator?10000*sum(recipients,r=>(r.concentration_weight/concentrationDenominator)**2):null,top4:concentrationDenominator?sum(recipients.slice(0,4),'concentration_weight')/concentrationDenominator:null,september:positive?sum(rows.filter(r=>String(r.action_date).slice(5,7)==='09'),r=>Math.max(0,r.obligation))/positive:null,competition};
+    return {net:moneySum(rows,'obligation'),positive,concentrationDenominator,negative:moneySum(rows,r=>Math.min(0,r.obligation)),transactions:rows.length,awards:new Set(rows.map(r=>r.award_id)).size,recipients:recipients.length,hhi:concentrationDenominator?10000*sum(recipients,r=>(r.concentration_weight/concentrationDenominator)**2):null,top4:concentrationDenominator?moneySum(recipients.slice(0,4),'concentration_weight')/concentrationDenominator:null,september:positive?moneySum(rows.filter(r=>String(r.action_date).slice(5,7)==='09'),r=>Math.max(0,r.obligation))/positive:null,competition};
   }
   function competitionClass(value) {
     if (value == null || value === '') return 'unknown';
@@ -87,17 +91,21 @@
     const s=stats(); const link=state.linkage?.summary;
     $('#view-overview').innerHTML=`<div class="section-kicker">${esc(scope())} · The ledger at a glance</div><div class="metrics">${metric('net','Net obligations',money(s.net),`${money(s.negative)} in negative adjustments retained`)}${metric('awards','Contract awards',integer(s.awards),`${integer(s.transactions)} transaction actions`)}${metric('recipients','Identified recipients',integer(s.recipients),'Legal recipients · identifiers before names')}${metric('hhi','Supplier concentration',dec(s.hhi),`HHI / 10,000 · top 4 share ${pct(s.top4)}`)}</div>${flow()}<div class="grid"><section class="panel">${panelHead('A three-year perspective','Net obligations by federal fiscal year','ACTUAL TRANSACTIONS')}${annualChart()}<div class="panel-footer"><span>Fiscal years run October 1 to September 30.</span><button class="text-link" data-evidence="annual">Formula & SQL ↗</button></div></section><section class="panel competition-panel">${panelHead('Competition, as reported','Source classifications by action')}${competitionViz(s)}<div class="panel-footer"><span>No inferred bids or tender scores.</span><button class="text-link" data-evidence="competition">Inspect evidence ↗</button></div></section></div><div class="callout"><span class="callout-icon" aria-hidden="true">⋈</span><div><h3>Would a different entity match change the answer?</h3><p>${esc(link?.interpretation||'Explore supplier identity uncertainty separately from the administrative identifiers in the source. A similar name does not justify merging two recipients.')}</p></div><button class="text-link" data-tab="uncertainty">Test the conclusion ↗</button></div><section class="panel">${panelHead('Where the commitments go','Recipients ordered by positive-net balances. Large totals are not a risk ranking.')} ${recipientTable()}<div class="panel-footer"><span>${integer(s.recipients)} recipients in this selection · shares use positive recipient net balances</span><button class="text-link" data-evidence="top">Formula & SQL ↗</button></div></section>${researchFindings()}`;
   }
+  function filteredAwards() {
+    const candidates=state.selectedRecipient?awardsForRecipient(state.selectedRecipient):selectedAwards();
+    return candidates.filter(r=>`${r.award_id} ${r.piid||''} ${r.recipient_name} ${r.description}`.toLowerCase().includes(state.search.toLowerCase()));
+  }
   function renderExplorer() {
     const awards=selectedAwards();
     if (state.selectedAward&&!awards.some(a=>a.award_id===state.selectedAward)) state.selectedAward=null;
     let detail='';
     if(state.selectedAward) detail=awardDetail(state.selectedAward);
     else if(state.selectedRecipient) detail=recipientDetail(state.selectedRecipient);
-    const candidates=state.selectedRecipient?awardsForRecipient(state.selectedRecipient):awards;
-    const filtered=candidates.filter(r=>`${r.award_id} ${r.piid||''} ${r.recipient_name} ${r.description}`.toLowerCase().includes(state.search.toLowerCase()));
+    const filtered=filteredAwards();
+    const selected=stats(investigationRows({fiscal_year:state.year,search:state.search,award_id:state.selectedAward,recipient_id:state.selectedRecipient}));
     const pages=Math.max(1,Math.ceil(filtered.length/state.pageSize));state.page=Math.min(state.page,pages);
     const shown=filtered.slice((state.page-1)*state.pageSize,state.page*state.pageSize);
-    $('#view-explorer').innerHTML=`${detail}<section class="panel">${panelHead(state.selectedRecipient?'Awards for this recipient':'The award ledger',state.selectedRecipient?'Amounts shown are actions attributed to this recipient. Open an award for its complete selected-window history.':'Select an award to follow its modifications and source records.')}<div class="table-controls"><label class="search"><span class="sr-only" hidden>Search award ledger</span><input aria-label="Search awards or recipients" id="award-search" type="search" placeholder="Search awards, recipients, descriptions…" value="${esc(state.search)}"></label>${state.selectedRecipient?'<button class="button secondary small" data-clear-recipient>All recipients</button>':''}<span class="result-count">${integer(filtered.length)} awards</span></div><div class="table-wrap"><table><thead><tr><th>Award / recipient</th><th class="number">Net obligations</th><th class="number">${state.selectedRecipient?'Attributed actions':'Actions'}</th><th>Latest action</th><th></th></tr></thead><tbody>${shown.map(a=>`<tr><td class="name"><button data-award="${esc(a.award_id)}">${esc(a.piid||a.award_id)}</button><div class="muted" style="font-size:9px;margin-top:4px">${state.selectedRecipient?'Latest award recipient: ':''}${esc(a.recipient_name)}${a.recipient_ids?.length>1?' · recipient changed':''}</div></td><td class="number ${(a.attributed_net_obligations??a.net_obligations)<0?'negative-text':''}">${money(a.attributed_net_obligations??a.net_obligations)}${a.attributed_net_obligations!=null&&a.recipient_ids?.length>1?`<div class="muted" style="font:8px var(--sans);margin-top:4px">Full award: ${money(a.full_award_net_obligations)}</div>`:''}</td><td class="number">${integer(a.attributed_transaction_count??a.transaction_count)}</td><td class="no-wrap muted">${fmtDate(a.attributed_last_action??a.last_action)}</td><td><button class="text-link" data-award="${esc(a.award_id)}" aria-label="Explore award ${esc(a.piid||a.award_id)}">↗</button></td></tr>`).join('')||'<tr><td colspan="5"><div class="empty">No awards match this search. Try a shorter recipient name or clear the search.</div></td></tr>'}</tbody></table></div><div class="pagination"><span>Page ${state.page} of ${pages}</span><button class="button secondary small" data-page="${state.page-1}" ${state.page===1?'disabled':''} aria-label="Previous page">←</button><button class="button secondary small" data-page="${state.page+1}" ${state.page===pages?'disabled':''} aria-label="Next page">→</button></div><div class="panel-footer"><span>Amounts cover actions in ${esc(scope())}, not the lifetime award ceiling.</span><button class="text-link" data-evidence="flow">Trace the ledger ↗</button></div></section>`;
+    $('#view-explorer').innerHTML=`${detail}<section class="panel"><div class="panel-header"><div><h2>Investigation selection</h2><p>${integer(selected.transactions)} transaction actions · ${integer(selected.awards)} awards · ${integer(selected.recipients)} recipients</p><p>Signed net ${money(selected.net,false)} · positive action obligations ${money(selected.positive,false)} · HHI denominator ${money(selected.concentrationDenominator,false)} · HHI ${dec(selected.hhi)}</p><p class="footnote">Search, fiscal year and selected award or recipient determine these metrics. Obligations are commitments, not payments.</p></div></div></section><section class="panel">${panelHead(state.selectedRecipient?'Awards for this recipient':'The award ledger',state.selectedRecipient?'Amounts shown are actions attributed to this recipient. Open an award for its complete selected-window history.':'Select an award to follow its modifications and source records.')}<div class="table-controls"><label class="search"><span class="sr-only" hidden>Search award ledger</span><input aria-label="Search awards or recipients" id="award-search" type="search" placeholder="Search awards, recipients, descriptions…" value="${esc(state.search)}"></label>${state.selectedRecipient?'<button class="button secondary small" data-clear-recipient>All recipients</button>':''}<span class="result-count">${integer(filtered.length)} awards</span></div><div class="table-wrap"><table><thead><tr><th>Award / recipient</th><th class="number">Net obligations</th><th class="number">${state.selectedRecipient?'Attributed actions':'Actions'}</th><th>Latest action</th><th></th></tr></thead><tbody>${shown.map(a=>`<tr><td class="name"><button data-award="${esc(a.award_id)}">${esc(a.piid||a.award_id)}</button><div class="muted" style="font-size:9px;margin-top:4px">${state.selectedRecipient?'Latest award recipient: ':''}${esc(a.recipient_name)}${a.recipient_ids?.length>1?' · recipient changed':''}</div></td><td class="number ${(a.attributed_net_obligations??a.net_obligations)<0?'negative-text':''}">${money(a.attributed_net_obligations??a.net_obligations)}${a.attributed_net_obligations!=null&&a.recipient_ids?.length>1?`<div class="muted" style="font:8px var(--sans);margin-top:4px">Full award: ${money(a.full_award_net_obligations)}</div>`:''}</td><td class="number">${integer(a.attributed_transaction_count??a.transaction_count)}</td><td class="no-wrap muted">${fmtDate(a.attributed_last_action??a.last_action)}</td><td><button class="text-link" data-award="${esc(a.award_id)}" aria-label="Explore award ${esc(a.piid||a.award_id)}">↗</button></td></tr>`).join('')||'<tr><td colspan="5"><div class="empty">No awards match this search. Try a shorter recipient name or clear the search.</div></td></tr>'}</tbody></table></div><div class="pagination"><span>Page ${state.page} of ${pages}</span><button class="button secondary small" data-page="${state.page-1}" ${state.page===1?'disabled':''} aria-label="Previous page">←</button><button class="button secondary small" data-page="${state.page+1}" ${state.page===pages?'disabled':''} aria-label="Next page">→</button></div><div class="panel-footer"><span>Amounts cover actions in ${esc(scope())}, not the lifetime award ceiling.</span><button class="text-link" data-evidence="flow">Trace the ledger ↗</button></div></section>`;
   }
   function awardDetail(id) {
     const a=selectedAwards().find(a=>a.award_id===id);if(!a)return '';
@@ -195,6 +203,55 @@
   }
   function download(filename,content,type='application/json') {const b=new Blob([content],{type}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500);toast(`Downloaded ${filename}`);}
   function toast(message) {const t=$('#toast');t.textContent=message;t.hidden=false;clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.hidden=true,6500);}
+  const INVESTIGATION_SCHEMA='civicledger-investigation-v1';
+  function investigationRows(selection) {
+    const prior={year:state.year,search:state.search,selectedAward:state.selectedAward,selectedRecipient:state.selectedRecipient};
+    try {
+      Object.assign(state,{year:selection.fiscal_year,search:selection.search,selectedAward:selection.award_id,selectedRecipient:selection.recipient_id});
+      const ids=new Set(filteredAwards().map(r=>r.award_id));
+      return selectedTx().filter(t=>ids.has(t.award_id)&&(!state.selectedAward||t.award_id===state.selectedAward)&&(!state.selectedRecipient||t.recipient_id===state.selectedRecipient));
+    } finally { Object.assign(state,prior); }
+  }
+  function validateInvestigation(selection,notes,scenario) {
+    if(!selection||typeof selection!=='object'||Array.isArray(selection)||Object.keys(selection).sort().join(',')!=='award_id,fiscal_year,recipient_id,search'||typeof selection.search!=='string')throw Error('Invalid or incomplete investigation selection.');
+    if(selection.search.length>500)throw Error('Search is longer than 500 characters. Shorten it before saving or reopening; the text has been kept.');
+    if(!(['all',...state.data.years.map(String)].includes(selection.fiscal_year))||![selection.award_id,selection.recipient_id].every(x=>x===null||typeof x==='string')||typeof notes!=='string'||notes.length>10000||!scenario||typeof scenario!=='object'||Array.isArray(scenario)||Object.keys(scenario).length>1)throw Error('Invalid or incomplete investigation selection.');
+    for(const [id,choice] of Object.entries(scenario)) {
+      const item=[...(state.linkage?.queue||[]),...(state.linkage?.experiments?.queue||[])].find(x=>String(x.id)===id);
+      if(!item||!['merged','separate','unresolved'].includes(choice))throw Error('Unknown conditional identity preview.');
+    }
+  }
+  function sameValues(a,b) {
+    if(a===b)return typeof a!=='number'||Number.isFinite(a);
+    if(a===null||b===null||typeof a!=='object'||typeof b!=='object'||Array.isArray(a)!==Array.isArray(b))return false;
+    if(Array.isArray(a))return a.length===b.length&&a.every((v,i)=>sameValues(v,b[i]));
+    const ak=Object.keys(a).sort(),bk=Object.keys(b).sort();
+    return ak.length===bk.length&&ak.every((k,i)=>k===bk[i]&&sameValues(a[k],b[k]));
+  }
+  function investigation() {
+    const meta=state.data.meta;
+    if(!meta.generation_id||!meta.query_sha256||!meta.public_csv_sha256)throw Error('This release has no verified generation identity. Build a generation before saving an investigation.');
+    const selection={fiscal_year:state.year,search:state.search,award_id:state.selectedAward,recipient_id:state.selectedRecipient};
+    const notes=$('#investigation-notes').value;
+    validateInvestigation(selection,notes,state.scenario);
+    const rows=investigationRows(selection);
+    if((selection.award_id&&!rows.some(r=>r.award_id===selection.award_id))||(selection.recipient_id&&!rows.some(r=>r.recipient_id===selection.recipient_id)))throw Error('Selected award or recipient has no matching records.');
+    return {schema:INVESTIGATION_SCHEMA,source:{generation_id:meta.generation_id,snapshot_id:meta.snapshot_id,public_csv_sha256:meta.public_csv_sha256,query_sha256:meta.query_sha256},selection,
+      scenario:structuredClone(state.scenario),notes,record_ids:rows.map(r=>r.transaction_id).sort(),metrics:stats(rows),
+      limitation:'Entity choices are conditional previews, not source adjudications. Obligations are commitments, not payments.'};
+  }
+  function openInvestigation(saved) {
+    const meta=state.data.meta;
+    if(!meta.generation_id||!meta.query_sha256||!meta.public_csv_sha256)throw Error('The open release has no verified generation identity.');
+    if(!saved||saved.schema!==INVESTIGATION_SCHEMA||!saved.source||saved.source.generation_id!==meta.generation_id||saved.source.snapshot_id!==meta.snapshot_id||saved.source.public_csv_sha256!==meta.public_csv_sha256||saved.source.query_sha256!==meta.query_sha256)throw Error('Investigation source or query identity differs from the open generation. To reopen it, start the workspace with --generation '+(/^[0-9a-f]{32}$/.test(saved?.source?.generation_id||'')?saved.source.generation_id:'<saved generation ID>')+'.');
+    const q=saved.selection;
+    validateInvestigation(q,saved.notes,saved.scenario);
+    const rows=investigationRows(q);
+    if((q.award_id&&!rows.some(r=>r.award_id===q.award_id))||(q.recipient_id&&!rows.some(r=>r.recipient_id===q.recipient_id)))throw Error('Selected award or recipient has no matching records.');
+    if(!sameValues(rows.map(r=>r.transaction_id).sort(),saved.record_ids)||!sameValues(stats(rows),saved.metrics))throw Error('Saved claims differ from this generation; no state was restored.');
+    Object.assign(state,{year:q.fiscal_year,search:q.search,selectedAward:q.award_id,selectedRecipient:q.recipient_id,scenario:{...saved.scenario},page:1});
+    $('#fiscal-year').value=q.fiscal_year;$('#investigation-notes').value=saved.notes;render();switchTab('explorer');
+  }
   function dossier(c=null) {
     const tx=c?state.data.transactions:selectedTx().filter(t=>(!state.selectedAward||t.award_id===state.selectedAward)&&(!state.selectedRecipient||t.recipient_id===state.selectedRecipient));
     const selection=c?{fiscal_year:'all',scope:'Fixed case evidence uses the complete FY2022–FY2024 cohort, independent of explorer filters.',case_id:c.id,case_award_id:c.record?.award_id||null,case_transaction_id:c.record?.transaction_id||null}:{fiscal_year:state.year,award_id:state.selectedAward,recipient_id:state.selectedRecipient,view:state.tab};
@@ -236,13 +293,17 @@
   });
   $('#fiscal-year').addEventListener('change',event=>{state.year=event.target.value;state.page=1;state.selectedAward=null;state.selectedRecipient=null;render();});
   document.addEventListener('input',event=>{if(event.target.id==='award-search'){const start=event.target.selectionStart;state.search=event.target.value;state.page=1;renderExplorer();const input=$('#award-search');input.focus();input.setSelectionRange(start,start);}});
-  $('#export-dossier').addEventListener('click',()=>{if(!state.data)return;download(`civicledger-${scope().toLowerCase().replace('–','-')}-dossier.json`,JSON.stringify(dossier(),null,2));});
+  $('#export-dossier').addEventListener('click',()=>{if(!state.data)return;try{if(!state.data.meta.generation_id){download('civicledger-legacy-dossier.json',JSON.stringify(dossier(),null,2));toast('Legacy dossier exported. Build a generation for a reopenable investigation.');return;}download('civicledger-investigation.json',JSON.stringify(investigation(),null,2));}catch(error){toast(error.message);}});
+  $('#open-investigation-button').addEventListener('click',()=>$('#open-investigation').click());
+  $('#open-investigation').addEventListener('change',async event=>{try{const file=event.target.files[0];if(!file)return;if(file.size>2000000)throw Error('Investigation exceeds 2 MB.');openInvestigation(JSON.parse(await file.text()));toast('Investigation reopened and recomputed.');}catch(error){toast(error.message);}finally{event.target.value='';}});
   $('#evidence-dialog').addEventListener('click',event=>{if(event.target===$('#evidence-dialog')){const r=event.target.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)event.target.close();}});
   window.addEventListener('hashchange',()=>switchTab(location.hash.slice(1)||'overview',false));
   async function fetchJSON(file,required=false){try{const r=await fetch(file,{cache:'no-cache'});if(!r.ok)throw new Error(`${file}: HTTP ${r.status}`);return await r.json();}catch(error){if(required)throw error;console.info(`Optional evidence unavailable: ${file}`,error.message);return null;}}
   async function init(){try{
     const [data,linkage,cases,reports]=await Promise.all([fetchJSON('data.json',true),fetchJSON('linkage.json',true),fetchJSON('cases.json',true),fetchJSON('reports.json',true)]);
-    state.data=normalise(data);state.linkage=linkage;state.reports=reports;state.cases=(Array.isArray(cases)?cases:cases?.cases||[]).map(c=>{
+    state.data=normalise(data);
+    if(linkage?.source?.snapshot_id!==data.meta.snapshot_id||linkage?.source?.public_csv_sha256!==data.meta.public_csv_sha256||reports?.source_snapshot!==data.meta.snapshot_id||reports?.source_csv_sha256!==data.meta.public_csv_sha256)throw Error('Supporting evidence belongs to a different source snapshot.');
+    state.linkage=linkage;state.reports=reports;state.cases=(Array.isArray(cases)?cases:cases?.cases||[]).map(c=>{
       const record=c.record||{},isAward=c.id==='portfolio-concentration';
       const metric_value=c.metric_value??(isAward?money(record.net):record.obligation!=null?money(record.obligation):null);
       const metric_label=c.metric_label??(isAward?'net obligations in the observed award':record.obligation<0?'recorded commitment reduction':'positive September action');
@@ -254,7 +315,7 @@
     $('#snapshot-label').textContent=`SNAPSHOT · ${fmtDate(m.retrieved_at||m.snapshot_date)} UTC`;$('#footer-snapshot').textContent=`${integer(state.data.transactions.length)} source actions · ${m.snapshot_id||fmtDate(m.retrieved_at)} UTC`;
     $('#source-repo').href=safeUrl(m.repository||'https://github.com/nazeeh111/civicledger');$('#source-repo').target='_blank';$('#source-repo').rel='noopener';
     state.tab=tabs[location.hash.slice(1)]?location.hash.slice(1):'overview';render();$('#loading').hidden=true;$('#app').hidden=false;
-    window.CIVICLEDGER={state,stats,selectedTx,selectedAwards,awardsForRecipient,recipientRows,dossier,metricDefs,competitionClass,normalise,decisionMemo};
+    window.CIVICLEDGER={state,stats,selectedTx,selectedAwards,awardsForRecipient,recipientRows,dossier,investigation,openInvestigation,investigationRows,metricDefs,competitionClass,normalise,decisionMemo};
   }catch(error){$('#loading').innerHTML=`<span class="loading-mark" aria-hidden="true">▦</span><h1>Evidence unavailable</h1><p>The source snapshot could not be loaded. Please reload the page or inspect the release repository.</p><p class="error-detail">${esc(error.message)}</p><a class="button secondary" href="https://github.com/nazeeh111/civicledger" target="_blank" rel="noopener">Open source repository ↗</a>`;$('#export-dossier').disabled=true;console.error(error);}}
   init();
 })();

@@ -15,3 +15,8 @@ app/.git/
 !app/dist/
 !app/dist/**
 dbt/.user.yml
+# Locally built immutable generation snapshots and their single-writer lock.
+data/generations/
+data/current
+data/.current-*
+data/.generation.lock

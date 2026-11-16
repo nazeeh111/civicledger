@@ -20,13 +20,13 @@
     <div class="side-bottom"><div class="source-status"><span class="status-dot"></span>Public data · reproducible analysis</div><p>Unusual patterns are questions to investigate. They are not evidence of wrongdoing.</p><a id="source-repo" href="https://api.usaspending.gov/" target="_blank" rel="noopener">Source & reproducibility <span aria-hidden="true">↗</span></a></div>
   </aside>
   <div class="workspace">
-    <header class="topbar"><div><span class="breadcrumb">CIVICLEDGER</span><span class="slash">/</span><span id="breadcrumb-view">Overview</span></div><div class="top-actions"><span class="snapshot" id="snapshot-label">Preparing evidence</span><button class="button small" id="export-dossier"><span aria-hidden="true">↓</span> Export dossier</button></div></header>
+    <header class="topbar"><div><span class="breadcrumb">CIVICLEDGER</span><span class="slash">/</span><span id="breadcrumb-view">Overview</span></div><div class="top-actions"><span class="snapshot" id="snapshot-label">Preparing evidence</span><button class="button secondary small" id="open-investigation-button" type="button">Open investigation</button><input type="file" id="open-investigation" accept="application/json,.json" hidden><button class="button small" id="export-dossier"><span aria-hidden="true">↓</span> Export dossier</button></div></header>
     <main id="main" tabindex="-1">
       <div id="loading" role="status" class="loading"><span class="loading-mark" aria-hidden="true">▦</span><h1>Opening the ledger</h1><p>Loading the published evidence snapshot.</p></div>
       <div id="app" hidden>
         <section class="page-intro"><div><p class="eyebrow">EVIDENCE-FIRST PROCUREMENT INTELLIGENCE</p><h1 id="page-title">Public money.<br><em>A clearer picture.</em></h1><p class="intro-copy" id="page-description">Follow contract funding to its recipients, compare like-for-like peers, and see which conclusions survive ambiguity.</p></div><div class="scope-card"><span class="eyebrow">ANALYSIS COHORT</span><strong id="scope-agency">—</strong><p id="scope-description"></p><div class="filter-line"><label for="fiscal-year">Fiscal year</label><select id="fiscal-year"><option value="all">All years</option></select></div><p class="scope-foot" id="scope-foot"></p></div></section>
         <div class="view" id="view-overview"></div>
-        <div class="view" id="view-explorer" hidden></div>
+        <div class="view" id="view-explorer" hidden></div><section class="panel" aria-label="Investigation notes"><label for="investigation-notes">Investigation notes and challenges</label><textarea id="investigation-notes" rows="3" maxlength="10000" style="display:block;width:100%;margin-top:8px" placeholder="Record assumptions, questions or challenges"></textarea><p class="footnote">Notes and conditional identity previews are saved in the dossier; they do not change source records.</p></section>
         <div class="view" id="view-uncertainty" hidden></div>
         <div class="view" id="view-cases" hidden></div>
         <div class="view" id="view-methods" hidden></div>

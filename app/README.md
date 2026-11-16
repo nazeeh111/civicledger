@@ -1,9 +1,10 @@
 # CIVICLEDGER explorer
 
-The app is a buildless, browser-local explorer of the retained public snapshot. Serve `dist/` with any static server. No accounts, API keys, analytics, package installation, or server-side database are needed to explore the published data. Fonts are bundled with their open licenses.
+The app is a buildless, browser-local explorer of the retained public snapshot. For source-bound saved investigations, serve a verified, pinned generation with `python -m civicledger.workspace`. For a retained older investigation use `python -m civicledger.workspace --generation GENERATION_ID`; the saved file records that ID. Mismatched, missing or changed generations are refused. The checked-in `dist/` remains a static release for browsing and does not have a local generation identity. No accounts, API keys, analytics, package installation, or server-side database are needed to explore the published data. Fonts are bundled with their open licenses.
 
 ```sh
-python3 -m http.server 8080 --directory app/dist
+python -m civicledger.warehouse
+python -m civicledger.workspace --port 8080
 ```
 
 The warehouse exports `dist/data.json`; the linkage analysis exports `dist/linkage.json`; the statistical report supplies `dist/reports.json` and `dist/cases.json`. The app does not fetch current USAspending records at runtime. Official evidence links open the public source record.

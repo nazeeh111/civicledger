@@ -20,7 +20,7 @@ def records(con,sql):
     cur=con.execute(sql); names=[a[0] for a in cur.description]
     return [dict(zip(names,row)) for row in cur.fetchall()]
 
-def build():
+def _build_in_place():
     DB.parent.mkdir(parents=True,exist_ok=True)
     con=duckdb.connect(str(DB))
     # Every column is loaded as text first. Casts and null handling are explicit in versioned SQL.
@@ -39,7 +39,7 @@ def build():
                                'difference':actual-amount,'pass':abs(actual-amount)<=Decimal('0.01')})
     tests.append({'test':'source_transaction_count','violations':abs(con.execute('SELECT count(*) FROM fact_transactions').fetchone()[0]-manifest['expected_transaction_count'])})
     tests.append({'test':'official_annual_reconciliation','violations':sum(not r['pass'] for r in reconciliation)})
-    validation={'duckdb_version':duckdb.__version__,'snapshot_id':manifest['snapshot_id'],
+    validation={'duckdb_version':duckdb.__version__,'generation_id':manifest.get('generation_id'),'query_sha256':manifest.get('query_sha256'),'snapshot_id':manifest['snapshot_id'],
                 'tests':tests,'reconciliation':reconciliation,'all_passed':all(t['violations']==0 for t in tests)}
     save_json(ROOT/'data/processed/validation.json',validation)
     if not validation['all_passed']: raise ValueError(validation)
@@ -125,7 +125,7 @@ def export(con,manifest,annual,validation):
       'award_count':{'label':'Awards observed','formula':'COUNT(DISTINCT contract_award_unique_key)','sql':'SELECT COUNT(*) FROM mart_awards','denominator':'Awards with at least one action in the selected window','benign_explanation':'Cohort includes older awards modified during these years.','source_sql':'sql/01_warehouse.sql'},
     }
     meta={'title':'CIVICLEDGER','agency':'Nuclear Regulatory Commission','scope':'NRC-awarded prime contract transactions; all sectors; action dates 2021-10-01 through 2024-09-30',
-      'fiscal_years':[2022,2023,2024],'retrieved_at':manifest['completed_at'],'snapshot_id':manifest['snapshot_id'],'public_csv_sha256':manifest['public_csv']['sha256'],
+      'fiscal_years':[2022,2023,2024],'retrieved_at':manifest['completed_at'],'generation_id':manifest.get('generation_id'),'query_sha256':manifest.get('query_sha256'),'snapshot_id':manifest['snapshot_id'],'public_csv_sha256':manifest['public_csv']['sha256'],
       'filters':manifest['filters'],'source_url':'https://api.usaspending.gov/','raw_manifest':'data/processed/manifest.json',
       'transaction_count':len(tx),'award_count':len(awards),'recipient_count':len(recipients),
       'caveats':['Obligations are commitments, not cash outlays; outlay fields are unavailable here.',
@@ -166,5 +166,9 @@ def export_dbt():
     save_json(ROOT/'data/processed/dbt_validation.json',summary)
     con.close()
 
+def build():
+    from .generation import publish
+    return publish(ROOT, mode='warehouse')
+
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.parse_args();build()
+    parser=argparse.ArgumentParser(prog="python -m civicledger.warehouse", description="Build and publish a verified local warehouse generation using matching retained evidence.");parser.parse_args();build()

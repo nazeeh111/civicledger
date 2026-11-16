@@ -36,15 +36,15 @@ The core `peer_competition` view describes **action records**, which can repeat 
 
 ## Build and evidence
 
-Run `python -m civicledger.warehouse` to build `data/warehouse.duckdb`, native SQL marts, validation, CSV projections, profiles and `app/dist/data.json` from the public minimized snapshot.
+Run `python -m civicledger.warehouse` to build a new local generation from the public minimized snapshot. The validated database, native SQL marts, validation, CSV projections, profiles and explorer data are under `data/current/`. The current pointer changes only after the complete staged generation passes its checks; the previous generation remains available.
 
 From the repository root, run:
 
 ```sh
-CIVICLEDGER_DB="$PWD/data/warehouse.duckdb" dbt build --project-dir dbt --profiles-dir dbt
+python -m civicledger.reproduce --skip-linkage
 pytest tests/test_warehouse.py
 ```
 
 The dbt models add supplier cohorts and year-over-year windows, one-row-per-award-year competition reports, peer denominators and source revision lag. Native SQL validation checks transaction and history keys, grain-preserving joins, cumulative endpoint accounting, boundaries, fiscal dates, missingness conventions, signed-flow identities and official aggregate reconciliation. Python tests add privacy/provenance checks and a visibly synthetic +100/−40/0/+40 accounting fixture. Synthetic fixture results are not analytical findings.
 
-At the checked snapshot, 17 native SQL checks, 15 dbt data tests and six warehouse Python tests passed. Official net obligations reconcile to the cent: FY2022 $172,539,161.85; FY2023 $183,288,400.22; FY2024 $192,923,805.28. Persisted machine-readable evidence is in `data/processed/validation.json` and `dbt_validation.json`.
+At the checked snapshot, 17 native SQL checks, 15 dbt data tests and six warehouse Python tests passed. Official net obligations reconcile to the cent: FY2022 $172,539,161.85; FY2023 $183,288,400.22; FY2024 $192,923,805.28. Persisted machine-readable evidence for the selected generation is in `data/current/data/processed/validation.json` and `dbt_validation.json`. The staged reproduce command runs dbt before publication. Avoid writing dbt models into an already published generation.

@@ -24,15 +24,23 @@ def main():
     parser.add_argument("--replicates", type=int, default=20, help="Equal-budget review-policy experiment replicates")
     parser.add_argument("--test", action="store_true", help="Run the Python tests after regeneration")
     args = parser.parse_args()
+    if os.environ.get("CIVICLEDGER_STAGED") != "1":
+        from civicledger.generation import publish
+        publish(ROOT, mode="reproduce", arguments=sys.argv[1:])
+        return
     if args.refresh and args.skip_linkage:
         parser.error("--refresh requires rerunning linkage; do not combine it with --skip-linkage")
     if args.refresh:
         command([sys.executable, "-m", "civicledger.ingest"])
-    manifest = json.loads((ROOT / "data/processed/manifest.json").read_text())
+    manifest_path = ROOT / "data/processed/manifest.json"
+    manifest = json.loads(manifest_path.read_text())
+    manifest["generation_id"] = os.environ["CIVICLEDGER_GENERATION_ID"]
+    manifest["query_sha256"] = os.environ["CIVICLEDGER_QUERY_SHA256"]
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n")
     actual = hashlib.sha256((ROOT / "data/processed/transactions.csv").read_bytes()).hexdigest()
     if actual != manifest["public_csv"]["sha256"]:
         raise RuntimeError("Published CSV differs from its retrieval manifest; refusing to build mixed evidence")
-    command([sys.executable, "-m", "civicledger.warehouse"])
+    command([sys.executable, "-c", "from civicledger.warehouse import _build_in_place; _build_in_place()"])
     env = os.environ.copy()
     env["CIVICLEDGER_DB"] = str(ROOT / "data/warehouse.duckdb")
     env["DBT_SEND_ANONYMOUS_USAGE_STATS"] = "false"
@@ -62,7 +70,7 @@ def main():
     command(["node", "app/check-data.mjs"])
     if args.test:
         command([sys.executable, "-m", "pytest", "-q"])
-    print("Rebuild complete. Serve app/dist with python -m http.server --directory app/dist", flush=True)
+    print("Staged rebuild complete; publication follows validation.", flush=True)
 
 
 if __name__ == "__main__":

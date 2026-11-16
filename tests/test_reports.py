@@ -12,6 +12,8 @@ def test_public_case_records_point_to_exact_source_rows():
     cases = json.loads((ROOT / "data/reports/cases.json").read_text())
     assert len(cases) == 3
     assert len({c["id"] for c in cases}) == 3
+    concentration = next(c for c in cases if c["id"] == "portfolio-concentration")
+    assert f"across all {len(source):,} cohort actions" in concentration["denominator_text"]
     for case in cases:
         record = case["record"]
         matches = [x for x in source if x["contract_award_unique_key"] == record["award_id"]]

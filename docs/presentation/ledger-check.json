@@ -1,0 +1,53 @@
+{
+  "source_main": "ac039d70182bf00175ac2ccefacd38f62bcfde88",
+  "snapshot_id": "20261026T015420Z",
+  "public_csv_sha256": "c0bd912f23dd53a26c0d83c2cd79d0c448959784752fca0a6945f7bdfc84591c",
+  "generation_id": "e649b44add574381ae8113ba6afbc62f",
+  "query": "SELECT transaction_id,award_id,piid,modification_number,action_date,fiscal_year,obligation,cumulative_in_cohort_obligation,recipient_id,recipient_name,source_url,source_last_modified FROM award_timeline WHERE award_id=? ORDER BY action_date,transaction_id",
+  "parameters": [
+    "CONT_AWD_31310018F0052_3100_NRCHQ1017A0008_3100"
+  ],
+  "selected": {
+    "transaction_id": "3100_3100_31310018F0052_P00050_NRCHQ1017A0008_0",
+    "award_id": "CONT_AWD_31310018F0052_3100_NRCHQ1017A0008_3100",
+    "piid": "31310018F0052",
+    "modification_number": "P00050",
+    "action_date": "2023-05-25",
+    "fiscal_year": "2023",
+    "obligation": "-1335317.53",
+    "cumulative_in_cohort_obligation": "33795374.19",
+    "recipient_id": "C2T2JWN1D2K4",
+    "recipient_name": "TEKSYNAP CORPORATION",
+    "source_url": "https://www.usaspending.gov/award/CONT_AWD_31310018F0052_3100_NRCHQ1017A0008_3100/",
+    "source_last_modified": "2023-05-31 12:42:40-04:00"
+  },
+  "selectedIndex": 23,
+  "actions": 37,
+  "positive": "56164185.63",
+  "negative": "-2311317.53",
+  "net": "53852868.10",
+  "annual_reconciliation": [
+    {
+      "fiscal_year": "2022",
+      "retainedOfficialAggregate": "172539161.85",
+      "fullPublicCSVDecimalSum": "172539161.85",
+      "difference": "0.00"
+    },
+    {
+      "fiscal_year": "2023",
+      "retainedOfficialAggregate": "183288400.22",
+      "fullPublicCSVDecimalSum": "183288400.22",
+      "difference": "0.00"
+    },
+    {
+      "fiscal_year": "2024",
+      "retainedOfficialAggregate": "192923805.28",
+      "fullPublicCSVDecimalSum": "192923805.28",
+      "difference": "0.00"
+    }
+  ],
+  "all37OrderedAmountsAndCumulativeValuesMatchIndependentRawCSVDecimalRecompute": true,
+  "investigationIDsAndNetMatchSQL": true,
+  "sourceAttribution": "U.S. Department of the Treasury / USAspending retained public minimized contract-action snapshot; no external refresh, no private original raw data",
+  "interpretation": "Obligations are commitments, not cash paid. In-window cumulative amount is not lifetime funding or evidence of wrongdoing."
+}

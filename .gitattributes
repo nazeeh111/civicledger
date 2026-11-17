@@ -1,3 +1,9 @@
 # Preserve hashed source CSV bytes and upstream license line endings.
 *.csv -text -whitespace
 app/dist/assets/fonts/*-OFL.txt -text -whitespace
+
+# Exact retained-source evidence and source-derived figures.
+docs/presentation/*.csv -text
+docs/presentation/*.json -text
+docs/presentation/*.svg -text
+docs/presentation/*.txt -text

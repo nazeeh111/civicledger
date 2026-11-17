@@ -1,0 +1,16 @@
+{
+  "source_main": "ac039d70182bf00175ac2ccefacd38f62bcfde88",
+  "source_tree": "0bf69c77176337de6d24ab0700a146d2a4d817b0",
+  "encoding": "All37 actions; 74 step vertices and37 markers; linear calendar days, zero-baseline dollars displayed in millions; holds cumulative commitments between observed actions; selected negative action highlighted; in-cohort basis not lifetime or cash paid",
+  "files": {
+    "figure.py": "83dd53fd7c88ac50768d4db95788bdb3b0e0a295d10b2384de6c96dcb264b77e",
+    "ledger.svg": "7ffbfb03743bfab7ac0ad71b32168e7fc53135a939afe8697993bd5a590bfb27",
+    "ledger-mobile.svg": "6882ba5db44bebfaf8021441c30a52c88f3e544015320161a83bbda406080141",
+    "ledger.png": "741771e356af277470a6225c0a4095cbb8dfdae3c2538061e21b132bdac779dc",
+    "ledger-mobile.png": "d2c51273dd147b7a84276425a93ecb2c08e315f48252c3c9e323ea1a796d86cd",
+    "award-actions.csv": "656f686f41807f0b5d774ef6e717761b925e6915ca03d35fbd3570edf34d9367",
+    "query.sql": "454df6d5483eec4923071f0e6d1c2ab7618528d4503e1a790ca53fd903602d51",
+    "ledger-check.json": "a3400a35ccc52af6654fc7c1f3f7abef609ab2406a9b46787e2b2923f9709fd9",
+    "investigation.json": "cc7f02ddd32c89d7003aa294caf11959df85cb1075292e978b887e93ae66a842"
+  }
+}

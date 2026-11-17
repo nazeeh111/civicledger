@@ -1,0 +1,35 @@
+CIVICLEDGER: DECISION MEMO
+A negative action is part of the accounting
+
+SNAPSHOT
+Nuclear Regulatory Commission; FY2022, FY2023, FY2024; snapshot 20261026T015420Z.
+
+QUESTION
+What changes when reductions in commitments are retained?
+
+FINDING
+A deobligation reduces a prior commitment. It must remain in net totals and timelines. Its size alone cannot establish whether the underlying activity was appropriate.
+signed obligation on the selected modification: -$1,335,317.53
+
+
+DENOMINATOR AND SELECTION
+4,683 transaction actions. Most negative individual action obligation in the cohort.
+Most negative individual action obligation in the cohort.
+
+POSSIBLE BENIGN EXPLANATIONS
+- Contract closeout and unused balances
+- A scope or funding correction
+- Reversal or administrative adjustment
+
+UNCERTAINTY / DECISION
+The observation window excludes earlier actions. Cumulative amounts begin at the window boundary, not contract inception.
+
+REPRODUCE
+Formula: min(federal_action_obligation) across all cohort actions; accounting identity: net = positive + negative obligations
+SQL: select transaction_id, obligation from fact_transactions where obligation<0 order by obligation limit 1;
+Source: https://www.usaspending.gov/award/CONT_AWD_31310018F0052_3100_NRCHQ1017A0008_3100/
+Award: CONT_AWD_31310018F0052_3100_NRCHQ1017A0008_3100
+Transaction: 3100_3100_31310018F0052_P00050_NRCHQ1017A0008_0
+
+LIMITS
+This is descriptive procurement analysis. It is not evidence of wrongdoing, a fraud classification, or a causal claim. Obligations are commitments rather than outlays. The retained source snapshot can differ from later revisions.

@@ -6,7 +6,14 @@ Trace U.S. federal contract actions from an agency to an award, recipient and so
 
 The released Nuclear Regulatory Commission snapshot covers **4,683 contract actions across FY2022–FY2024**. Its net obligations are **$548,751,367.35**, which records commitments rather than cash paid.
 
-![CivicLedger overview](docs/screenshots/overview.jpg)
+<picture>
+  <source media="(max-width: 600px)" srcset="docs/presentation/ledger-mobile.png">
+  <img src="docs/presentation/ledger.png" alt="All 37 retained actions for one NRC award contribute to an in-window cumulative commitment ledger. P00050 is a negative 1,335,317.53 dollar adjustment. Positive commitments plus signed reductions reconcile to 53,852,868.10 dollars; these are not cash payments or evidence of wrongdoing.">
+</picture>
+
+**Keep the reduction in the sum.** Follow a real signed modification to its award, recipient and retained source record, then reopen the actual filtered investigation and independently recompute all 37 actions. [Complete worked artifact](docs/presentation/worked-example.zip) · [Source, SQL, accounting and limits](docs/presentation/README.md).
+
+[Earlier explorer overview](docs/screenshots/overview.jpg) remains separate. This new journey rebuilds only the bounded warehouse from the retained public CSV and reuses matching research evidence; it does not retrieve new data or rerun the linkage study.
 
 ## Explore a conclusion, then inspect its evidence
 
